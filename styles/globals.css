@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-primary {
+    @apply bg-white dark:bg-gray-900;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-50 dark:bg-gray-800;
+  }
+
+  .bg-tertiary {
+    @apply bg-gray-100 dark:bg-gray-700;
+  }
+
+  .border-primary {
+    @apply border-gray-200 dark:border-gray-690;
+  }
+
+  .border-secondary {
+    @apply border-gray-200 dark:border-gray-690;
+  }
+
+  .text-primary {
+    @apply text-gray-900 dark:text-gray-50;
+  }
+
+  .text-secondary {
+    @apply text-gray-800 dark:text-gray-100;
+  }
+
+  .text-tertiary {
+    @apply text-gray-700 dark:text-gray-200;
+  }
+
+  .text-primary-reverse {
+    @apply text-gray-50 dark:text-gray-900;
+  }
+
+  .text-secondary-reverse {
+    @apply text-gray-100 dark:text-gray-800;
+  }
+
+  .text-accent-primary {
+    @apply text-accent-600 dark:text-accent-400;
+  }
+
+  .text-accent-secondary {
+    @apply text-accent-900 dark:text-accent-300;
+  }
+
+  .min-h-screen_ {
+    min-height: calc(100vh - 4.5rem);
+  }
+
+  .h-screen_ {
+    height: calc(100vh - 4.5rem);
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  @apply antialiased font-main selection:bg-accent-300/90 selection:text-black/90;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+hr {
+  border: none;
+}
+
+[data-bright-theme='github-dark'] {
+  @apply !font-mono !bg-gray-800 !rounded-xl !px-0 !py-1;
+}
+
+pre {
+  @apply !font-mono !bg-gray-800 !rounded-2xl !p-0;
+}
