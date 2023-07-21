@@ -7,16 +7,19 @@ type GenMetadataProps = {
 }
 
 const genMetadata = ({ title, description, other }: GenMetadataProps): Metadata => {
+  const { openGraph, ..._other } = other ?? { openGraph: {} }
+
   return {
     title,
     description: description ?? undefined,
 
     openGraph: {
       title,
-      description: description ?? undefined
+      description: description ?? undefined,
+      ...openGraph
     },
 
-    ...other
+    ..._other
   }
 }
 
