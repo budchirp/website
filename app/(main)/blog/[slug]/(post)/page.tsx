@@ -22,18 +22,21 @@ import type { BlogPost } from '@/types/post'
 const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise<Metadata> => {
   const post = (await new Post().getBySlug(slug)) as BlogPost
 
-  return {
-    openGraph: {
-      type: 'article',
-      publishedTime: new Date(post.date).toISOString(),
-      images: [
-        {
-          url: post.imageUrl
-        }
-      ]
-    },
-    ...genMetadata({ title: `${post.title} | Blog`, description: post.description })
-  }
+  return genMetadata({
+    title: `${post.title} | Blog`,
+    description: post.description,
+    other: {
+      openGraph: {
+        type: 'article',
+        publishedTime: new Date(post.date).toISOString(),
+        images: [
+          {
+            url: post.imageUrl
+          }
+        ]
+      }
+    }
+  })
 }
 
 const Page: React.FC<DynamicPageProps> = async ({ params: { slug } }: DynamicPageProps): Promise<JSX.Element> => {
