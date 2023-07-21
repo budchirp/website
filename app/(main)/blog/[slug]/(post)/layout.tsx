@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Container } from '@/components/Container'
 
 import type { LayoutProps } from '@/types/layout'

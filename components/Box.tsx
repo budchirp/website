@@ -1,12 +1,25 @@
 import React, { type ComponentProps } from 'react'
 import { cn } from '@/lib/cn'
+import { VariantProps, cva } from 'class-variance-authority'
 
-type BoxProps = {} & ComponentProps<'div'>
+const boxVariants = cva(['bg-secondary rounded-2xl'], {
+  variants: {
+    padding: {
+      default: 'px-5 py-3',
+      none: ''
+    }
+  },
+  defaultVariants: {
+    padding: 'default'
+  }
+})
 
-const Box = (props: BoxProps): JSX.Element => {
+type BoxProps = {} & ComponentProps<'div'> & VariantProps<typeof boxVariants>
+
+const Box = ({ children, className, padding, ...props }: BoxProps): JSX.Element => {
   return (
-    <div {...props} className={cn('bg-2 rounded-2xl px-4 py-2', props.className)}>
-      {props.children}
+    <div {...props} className={cn(boxVariants({ className, padding }))}>
+      {children}
     </div>
   )
 }

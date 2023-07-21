@@ -4,4 +4,10 @@ type LayoutProps = {
   children: React.ReactNode
 }
 
-export type { LayoutProps }
+type DynamicLayoutProps = {
+  params: {
+    [key: string]: string
+  }
+} & LayoutProps
+
+export type { LayoutProps, DynamicLayoutProps }

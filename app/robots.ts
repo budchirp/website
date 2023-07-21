@@ -1,3 +1,5 @@
+import data from '@/data'
+
 import type { MetadataRoute } from 'next'
 
 const robots = (): MetadataRoute.Robots => {
@@ -6,7 +8,7 @@ const robots = (): MetadataRoute.Robots => {
       userAgent: '*',
       allow: '/'
     },
-    sitemap: `${process.env.APP_URL}/sitemap.xml`
+    sitemap: `${data.siteUrl}/sitemap.xml`
   }
 }
 

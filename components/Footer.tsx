@@ -7,7 +7,7 @@ import { Logo } from '@/components/Logo'
 
 const Footer: React.FC = (): JSX.Element => {
   return (
-    <footer className="border-p-1 mt-4 flex h-16 w-full items-center justify-center border-t">
+    <footer className="border-primary mt-4 flex h-16 w-full items-center justify-center border-t">
       <Container className="flex h-16 items-center justify-between">
         <Logo />
 

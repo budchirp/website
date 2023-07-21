@@ -1,7 +1,14 @@
 import React from 'react'
-import { Box } from '@/components/Box'
-import data from '@/data'
+
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import { Box } from '@/components/Box'
+import { genMetadata } from '@/lib/gen-metadata'
+import data from '@/data'
+
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+const metadata: Metadata = genMetadata({ title: 'Contact me' })
 
 const Page: React.FC = (): JSX.Element => {
   return (
@@ -12,19 +19,20 @@ const Page: React.FC = (): JSX.Element => {
 
         return (
           <AnimateOnScroll className="mb-4 last:mb-0" key={index}>
-            <Box className="hover:bg-1 duration-300 flex items-center justify-center transition">
+            <Box className="hover:bg-tertiary duration-300 flex items-center justify-center transition-all">
               <div className="flex h-12 w-full items-center space-x-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500 bg-opacity-50 p-1 text-xl">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">
                   {contact.icon}
                 </span>
-                <a
+
+                <Link
                   href={contact.link || '/contact'}
-                  className="hover:text-3 flex-1 text-xl font-bold transition duration-300"
+                  className="hover:font-medium flex-1 text-xl font-bold transition-all duration-300"
                   rel="noreferrer"
                   target="_blank"
                 >
                   {platform}
-                </a>
+                </Link>
               </div>
             </Box>
           </AnimateOnScroll>
@@ -34,4 +42,5 @@ const Page: React.FC = (): JSX.Element => {
   )
 }
 
+export { metadata }
 export default Page

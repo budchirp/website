@@ -23,6 +23,7 @@ const data = {
   description: 'Hello, World!',
   githubUsername: 'budchirp',
   keywords: ['about budchirp', 'budchirp projects', 'who is budchirp', 'contact budchirp'],
+  siteUrl: (process.env.APP_URL ?? 'http://localhost:3000') as string,
   skills: {
     Languages: [
       {

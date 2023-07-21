@@ -4,7 +4,7 @@ import { ScrollToTop } from '@/providers/ScrollToTop'
 import { ThemeProvider } from '@/providers/Theme'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { Lexend } from 'next/font/google'
+import { JetBrains_Mono, Lexend } from 'next/font/google'
 import { cn } from '@/lib/cn'
 import data from '@/data'
 
@@ -13,13 +13,13 @@ import type { Metadata } from 'next'
 
 import '@/styles/globals.css'
 
-const url = (process.env.APP_URL ?? '') as string
-
 const metadata: Metadata = {
-  metadataBase: new URL(url),
+  metadataBase: new URL(data.siteUrl),
   keywords: data.keywords,
-  authors: { name: 'budchirp', url },
+  creator: data.title,
+  authors: { name: data.title, url: data.siteUrl },
   description: data.description,
+  manifest: '/app.webmanifest',
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || ''
   },
@@ -31,11 +31,22 @@ const metadata: Metadata = {
     default: 'About me',
     template: `%s - ${data.title}`
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  },
   openGraph: {
+    siteName: `${data.title}'s website`,
     locale: 'en-US',
     type: 'website',
     description: data.description,
-    url: '/',
+    url: data.siteUrl,
     title: {
       default: 'About me',
       template: `%s - ${data.title}`
@@ -44,14 +55,16 @@ const metadata: Metadata = {
 }
 
 const lexend = Lexend({ subsets: ['latin'], variable: '--font-main' })
+const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 const RootLayout: React.FC<LayoutProps> = ({ children }: LayoutProps): JSX.Element => {
   return (
     <html suppressHydrationWarning={true} lang="en">
       <body
         className={cn(
-          'text-1 bg-1 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-400 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-600',
-          lexend.variable
+          'text-primary bg-primary scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-400 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-600',
+          lexend.variable,
+          jetBrainsMono.variable
         )}
       >
         <ThemeProvider>
