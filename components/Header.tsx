@@ -11,30 +11,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Box } from './Box'
-
-type LinkProps = {
-  label: string
-  url: string
-}
-
-const links: LinkProps[] = [
-  {
-    label: 'Home',
-    url: '/'
-  },
-  {
-    label: 'Contact me',
-    url: '/contact'
-  },
-  {
-    label: 'Projects',
-    url: '/projects'
-  },
-  {
-    label: 'Blog',
-    url: '/blog'
-  }
-]
+import { type LinkProps, links } from '@/lib/links'
 
 const Header: React.FC = () => {
   const pathname = usePathname()

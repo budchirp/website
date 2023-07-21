@@ -1,4 +1,4 @@
-import { LinkProps, links } from '@/components/Header'
+import { type LinkProps, links } from '@/lib/links'
 import { Post } from '@/lib/post'
 import data from '@/data'
 
