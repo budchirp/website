@@ -1,5 +1,6 @@
-import data from '@/data'
+import { LinkProps, links } from '@/components/Header'
 import { Post } from '@/lib/post'
+import data from '@/data'
 
 import type { MetadataRoute } from 'next'
 
@@ -10,9 +11,8 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
     lastModified: new Date(post.date).toISOString()
   }))
 
-  const routes: string[] = ['', 'contact', 'projects', 'blog']
-  const routes_sitemap = routes.map((url: string): { url: string; lastModified: string } => ({
-    url: `${data.siteUrl}/${url}`,
+  const routes_sitemap = links.map((link: LinkProps): { url: string; lastModified: string } => ({
+    url: `${data.siteUrl}/${link.url}`,
     lastModified: new Date().toISOString()
   }))
 

@@ -26,6 +26,8 @@ type ButtonProps = {} & ComponentProps<'button'> &
   }
 
 const Button = ({ children, disabled, className, variant, color, ...props }: ButtonProps): JSX.Element => {
+  if (!children) disabled = true
+
   return (
     <button {...props} className={cn(buttonVariants({ className, variant, color }))}>
       {disabled && <Loader2 className={cn('animate-spin', children ? 'mr-2' : '')} />}

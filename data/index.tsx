@@ -19,6 +19,7 @@ import { FaCss3, FaLinux, FaReact, FaVuejs } from 'react-icons/fa'
 import { Hexagon, Mail, Send, Terminal } from 'lucide-react'
 
 const data = {
+  name: 'budchirp',
   title: 'budchirp',
   description: 'Hello, World!',
   githubUsername: 'budchirp',

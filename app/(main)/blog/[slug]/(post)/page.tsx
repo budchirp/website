@@ -23,7 +23,6 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   const post = (await new Post().getBySlug(slug)) as BlogPost
 
   return {
-    ...genMetadata({ title: `${post.title} | Blog`, description: post.description }),
     openGraph: {
       type: 'article',
       publishedTime: new Date(post.date).toISOString(),
@@ -32,7 +31,8 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
           url: post.imageUrl
         }
       ]
-    }
+    },
+    ...genMetadata({ title: `${post.title} | Blog`, description: post.description })
   }
 }
 

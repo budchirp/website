@@ -46,10 +46,10 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-90"
       >
-        <Listbox.Options className={cn('fixed z-[100] w-screen origin-[85%_15%] top-[5.5rem] flex justify-center inset-x-0')}>
+        <Listbox.Options className={cn('fixed z-[100] w-screen origin-[75%_0%] md:origin-[90%_0%] top-[5.5rem] flex justify-center inset-x-0')}>
           <Container>
             <div className="relative flex justify-right items-right w-full">
-              <div className="top-0 right-2 absolute w-5/12 md:w-3/12 rounded-2xl bg-primary border border-primary">
+              <div className="top-0 right-2 absolute w-38 rounded-2xl bg-primary border border-primary">
                 {(Object.keys(themes) as Theme[]).map((theme: Theme): JSX.Element => {
                   const [label, Icon] = themes[theme]
 

@@ -16,8 +16,9 @@ import '@/styles/globals.css'
 const metadata: Metadata = {
   metadataBase: new URL(data.siteUrl),
   keywords: data.keywords,
-  creator: data.title,
-  authors: { name: data.title, url: data.siteUrl },
+  creator: data.name,
+  publisher: data.name,
+  authors: [{ name: data.name, url: data.siteUrl }],
   description: data.description,
   manifest: '/app.webmanifest',
   verification: {

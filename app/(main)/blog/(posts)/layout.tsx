@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = async ({ children }: LayoutProps): Promise
         <>
           <PageHeader>Blog</PageHeader>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">{children}</div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{children}</div>
         </>
       ) : (
         <VerticalPage items={["There's", 'nothing', 'to', 'see']} title={'👻'} />

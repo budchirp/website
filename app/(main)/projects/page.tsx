@@ -15,9 +15,7 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
   const reposRes = await fetch(`https://api.github.com/users/${data.githubUsername}/repos`, {
     cache: 'no-cache'
   })
-  const colorsRes = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json', {
-    cache: 'no-cache'
-  })
+  const colorsRes = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json')
 
   const repos: any = await reposRes.json()
   const colors: { [key: string]: { color: string; url: string } } = await colorsRes.json()
