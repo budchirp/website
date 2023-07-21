@@ -69,7 +69,7 @@ const Header: React.FC = () => {
         <Dialog onClose={() => setIsMobileMenuOpened(false)}>
           <Transition.Child
             as={Fragment}
-            enter="transition-all ease-out duration-300"
+            enter="transition-all ease-out duration-450"
             enterFrom="opacity-0"
             enterTo="opacity-100"
             leave="transition-all ease-in duration-150"
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
                 setIsMobileMenuOpened(false)
               }}
               aria-hidden="true"
-              className="md:hidden fixed bg-blend-overlay inset-0 z-[75] h-screen w-screen !bg-opacity-5 backdrop-blur bg-primary"
+              className="md:hidden fixed bg-blend-overlay inset-0 z-[75] h-screen w-screen !bg-opacity-5 backdrop-blur-sm bg-primary"
             />
           </Transition.Child>
 
@@ -94,10 +94,10 @@ const Header: React.FC = () => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >
-            <Dialog.Panel className="fixed z-[100] w-screen origin-[90%_0%] top-[5.5rem] flex justify-center inset-x-0">
-              <Container>
-                <div className="relative flex justify-right items-right w-full">
-                  <Box padding="none" variant="primary" className="overflow-hidden w-full max-w-screen-sm">
+            <Dialog.Panel className="fixed z-[100] w-screen origin-[90%_0%] top-[5.5rem] flex justify-center inset-x-0 mx-auto">
+              <Container className="flex items-center justify-center">
+                <div className="relative flex justify-center items-center w-full">
+                  <Box padding="none" variant="primary" className="overflow-hidden w-full sm:max-w-screen-xs">
                     <div className="flex items-center border-b border-primary px-6 h-16">
                       <Dialog.Title as="h2" className="text-2xl h-full flex items-center leading-none font-bold">
                         Links

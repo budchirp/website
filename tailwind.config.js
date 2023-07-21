@@ -3,9 +3,15 @@ const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
+  experimental: {
+    optimizeUniversalDefaults: true
+  },
   content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '475px'
+      },
       spacing: {
         18: '4.5rem'
       },
