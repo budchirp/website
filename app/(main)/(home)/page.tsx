@@ -45,7 +45,9 @@ const Page: React.FC = (): JSX.Element => {
           )
         )}
 
-        <small className="text-tertiary text-sm">*: I&apos;m learing it</small>
+        <AnimateOnScroll>
+          <small className="text-tertiary text-sm">*: I&apos;m learing it</small>
+        </AnimateOnScroll>
       </div>
 
       <div data-nosnippet className="mt-8">
