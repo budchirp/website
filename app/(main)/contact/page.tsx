@@ -19,21 +19,17 @@ const Page: React.FC = (): JSX.Element => {
 
         return (
           <AnimateOnScroll className="mb-4 last:mb-0" key={index}>
-            <Box className="hover:bg-tertiary duration-300 flex items-center justify-center transition-all">
-              <div className="flex h-12 w-full items-center space-x-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">
-                  {contact.icon}
-                </span>
+            <Box className="hover:bg-tertiary flex h-16 items-center space-x-3 duration-300">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">{contact.icon}</span>
 
-                <Link
-                  href={contact.link || '/contact'}
-                  className="hover:font-medium flex-1 text-xl font-bold transition-all duration-300"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {platform}
-                </Link>
-              </div>
+              <Link
+                href={contact.link || '/contact'}
+                className="text-primary hover:text-tertiary flex-1 text-xl font-bold transition-all duration-300"
+                rel="noreferrer"
+                target="_blank"
+              >
+                {platform}
+              </Link>
             </Box>
           </AnimateOnScroll>
         )

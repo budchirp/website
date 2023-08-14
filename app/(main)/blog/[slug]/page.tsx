@@ -48,26 +48,27 @@ const Page: React.FC<DynamicPageProps> = async ({ params: { slug } }: DynamicPag
 
   return (
     <>
-      <div className="w-full mt-6 h-min flex items-center justify-center">
-        <div className="w-full md:w-9/12 lg:w-8/12 h-min flex items-center justify-center">
-          <img className="rounded-2xl max-h-48 md:max-h-64 my-2 border border-primary object-cover w-full" alt={post.title} src={post.imageUrl} />
+      <div className="mt-4 flex h-min w-full items-center justify-center">
+        <div className="flex h-min w-full items-center justify-center md:w-9/12 lg:w-8/12">
+          <img className="border-primary my-2 max-h-48 w-full rounded-2xl border object-cover md:max-h-64" alt={post.title} src={post.imageUrl} />
         </div>
       </div>
 
       <PageHeader
         bottomPart={
           <>
-            <span className="font-medium space-x-1 text-sm text-secondary flex">
-              <User className="w-4 h-4" /> <p>{post.author}</p>
+            <span className="text-secondary flex space-x-1 text-sm font-bold">
+              <User className="h-4 w-4" /> <p>{post.author}</p>
             </span>
-            <span className="font-medium space-x-1 text-sm text-secondary flex">
-              <Calendar className="w-4 h-4" /> <p>{post.date.replaceAll('-', '/')}</p>
+            <span className="text-secondary flex space-x-1 text-sm font-bold">
+              <Calendar className="h-4 w-4" /> <p>{post.date.replaceAll('-', '/')}</p>
             </span>
-            <span className="font-medium space-x-1 text-sm text-secondary flex">
-              <Book className="w-4 h-4" /> <p>{post.readingTime}</p>
+            <span className="text-secondary flex space-x-1 text-sm font-bold">
+              <Book className="h-4 w-4" /> <p>{post.readingTime}</p>
             </span>
           </>
         }
+        className="!mt-4"
       >
         {post.title}
       </PageHeader>

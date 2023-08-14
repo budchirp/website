@@ -27,22 +27,20 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
 
         return (
           <AnimateOnScroll key={index}>
-            <Box>
-              <div className="flex w-full items-center break-words">
-                <Link
-                  href={repo.html_url}
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-primary hover:text-secondary break-all text-2xl font-bold transition-all duration-300 hover:font-medium"
-                >
-                  {repo.name}
-                </Link>
-              </div>
+            <Box className="hover:bg-tertiary space-y-1 transition duration-300">
+              <Link
+                href={repo.html_url}
+                rel="noreferrer"
+                target="_blank"
+                className="text-primary hover:text-tertiary flex w-full items-center break-all text-2xl font-bold transition duration-300"
+              >
+                {repo.name}
+              </Link>
 
-              {repo.description && <div className="text-secondary mt-1 w-full text-sm">{repo.description}</div>}
+              {repo.description && <p className="text-secondary w-full text-sm">{repo.description}</p>}
 
               {repo.language && (
-                <div className="flex items-center justify-between mt-1">
+                <div className="flex items-center justify-between">
                   {repo.language && (
                     <span style={{ ...(currentColor ? { color: currentColor as string } : {}) }} className={!currentColor ? 'text-secondary' : ''}>
                       {repo.language}

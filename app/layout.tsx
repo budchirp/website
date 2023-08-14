@@ -20,7 +20,7 @@ const metadata: Metadata = {
   publisher: data.name,
   authors: [{ name: data.name, url: data.siteUrl }],
   description: data.description,
-  manifest: '/app.webmanifest',
+  manifest: '/manifest.json',
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || ''
   },
@@ -60,10 +60,10 @@ const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 
 const RootLayout: React.FC<LayoutProps> = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html suppressHydrationWarning lang="en-US">
       <body
         className={cn(
-          'text-primary bg-primary scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-400 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-600',
+          'text-primary bg-primary scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-300 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-900',
           lexend.variable,
           jetBrainsMono.variable
         )}

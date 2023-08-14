@@ -28,7 +28,7 @@ const Page: React.FC = (): JSX.Element => {
           (key: string, index: number): JSX.Element => (
             <AnimateOnScroll key={index}>
               <span className="text-tertiary text-sm">{key}</span>
-              <div className="my-4 grid grid-cols-2 gap-2 md:grid-cols-3">
+              <div className="my-4 grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                 {/* @ts-ignore */}
                 {data.skills[key].map((skill: any, index: number): JSX.Element => {
                   return (
@@ -36,7 +36,7 @@ const Page: React.FC = (): JSX.Element => {
                       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">
                         {skill.icon}
                       </span>
-                      <p className="text-secondary text-sm break-all font-medium">{skill.name}</p>
+                      <p className="text-secondary break-all text-sm font-medium">{skill.name}</p>
                     </Box>
                   )
                 })}
@@ -44,6 +44,8 @@ const Page: React.FC = (): JSX.Element => {
             </AnimateOnScroll>
           )
         )}
+
+        <small className="text-tertiary text-sm">*: I&apos;m learing it</small>
       </div>
 
       <div data-nosnippet className="mt-8">
@@ -62,7 +64,7 @@ const Page: React.FC = (): JSX.Element => {
                   {data.journey[key].map(
                     (text: string, index: number): JSX.Element => (
                       <div key={index} className="flex">
-                        <span className="mr-2 text-primary-600">-</span>
+                        <span className="text-primary-600 mr-2">-</span>
                         <p className="text-secondary">{text}</p>
                       </div>
                     )

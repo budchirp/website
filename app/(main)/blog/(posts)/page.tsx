@@ -21,29 +21,29 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
         (post): JSX.Element => (
           <AnimateOnScroll key={post.slug}>
             <Box className="h-min" padding="none">
-              <div className="relative border-b max-h-48 flex items-center justify-center border-primary overflow-hidden rounded-t-2xl w-full h-min">
+              <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
                 <Link href={'/blog/' + post.slug}>
                   <img
-                    className="rounded-t-2xl hover:scale-110 transition duration-300 ease-out object-cover w-full"
+                    className="w-full rounded-t-2xl object-cover transition duration-300 ease-out hover:scale-110"
                     alt={post.title}
                     src={post.imageUrl}
                   />
                 </Link>
               </div>
 
-              <div className="w-full p-4">
-                <h6 className="text-sm flex font-medium items-center text-tertiary">
-                  <span className="text-xs mr-1 font-normal">
+              <div className="w-full space-y-1 p-4">
+                <h6 className="text-tertiary flex items-center text-sm font-medium">
+                  <span className="mr-1 text-xs font-normal">
                     <Calendar className="h-4 w-4" />
                   </span>
                   {post.date}
                 </h6>
 
                 <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                  <h1 className="text-xl font-bold break-all hover:text-secondary transition-all hover:font-medium duration-300 ">{post.title}</h1>
+                  <h1 className="hover:text-tertiary break-all text-xl font-bold transition duration-300">{post.title}</h1>
                 </Link>
 
-                <p className="text-secondary mb-1">{post.description}</p>
+                <p className="text-secondary">{post.description}</p>
 
                 <Link href={'/blog/' + post.slug}>
                   <Button className="w-full">Read more</Button>

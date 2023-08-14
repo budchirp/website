@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     <>
       <header
         className={cn(
-          'bg-primary border-primary fixed top-0 z-[125] flex h-18 w-full items-center transition duration-300 justify-center border-b backdrop-blur bg-blend-overlay',
+          'bg-primary border-primary fixed top-0 z-[125] flex h-18 w-full items-center justify-center border-b bg-blend-overlay backdrop-blur transition duration-300',
           isMobileMenuOpened ? 'bg-opacity-100 ease-out' : '!bg-opacity-25 ease-in'
         )}
       >
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
             <Logo />
           </Link>
 
-          <div className="flex h-full space-x-2 items-center">
+          <div className="flex h-full items-center space-x-2">
             <div className="hidden flex-row-reverse items-center gap-2 md:flex">
               {links.map((link: LinkProps, index: number) => (
                 <Link
@@ -68,22 +68,19 @@ const Header: React.FC = () => {
       <Transition show={isMobileMenuOpened} as={Fragment}>
         <Dialog onClose={() => setIsMobileMenuOpened(false)}>
           <Transition.Child
-            as={Fragment}
+            as="div"
             enter="transition-all ease-out duration-450"
             enterFrom="opacity-0"
             enterTo="opacity-100"
             leave="transition-all ease-in duration-150"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-          >
-            <div
-              onClick={() => {
-                setIsMobileMenuOpened(false)
-              }}
-              aria-hidden="true"
-              className="md:hidden fixed bg-blend-overlay inset-0 z-[75] h-screen w-screen !bg-opacity-5 backdrop-blur-sm bg-primary"
-            />
-          </Transition.Child>
+            onClick={() => {
+              setIsMobileMenuOpened(false)
+            }}
+            aria-hidden="true"
+            className="fixed inset-0 z-[75] h-screen w-screen bg-gray-100/25 bg-blend-overlay backdrop-blur dark:bg-black/10 md:hidden"
+          />
 
           <Transition.Child
             as={Fragment}
@@ -94,23 +91,23 @@ const Header: React.FC = () => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >
-            <Dialog.Panel className="fixed z-[100] w-screen origin-[90%_0%] top-[5.5rem] flex justify-center inset-x-0 mx-auto">
+            <Dialog.Panel className="fixed inset-x-0 top-[5.5rem] z-[100] mx-auto flex w-screen origin-[90%_0%] justify-center">
               <Container className="flex items-center justify-center">
-                <div className="relative flex justify-center items-center w-full">
-                  <Box padding="none" variant="primary" className="overflow-hidden w-full sm:max-w-screen-xs">
-                    <div className="flex items-center border-b border-primary px-6 h-16">
-                      <Dialog.Title as="h2" className="text-2xl h-full flex items-center leading-none font-bold">
+                <div className="relative flex w-full items-center justify-center">
+                  <Box padding="none" variant="primary" className="w-full overflow-hidden sm:max-w-screen-xs">
+                    <div className="border-primary flex h-16 items-center border-b px-6">
+                      <Dialog.Title as="h2" className="flex h-full items-center text-2xl font-bold leading-none">
                         Links
                       </Dialog.Title>
                     </div>
 
-                    <div className="px-6 my-2 flex flex-col">
+                    <div className="my-2 flex flex-col px-6">
                       {links.map(
                         (link: LinkProps, index: number): JSX.Element => (
                           <Link
                             key={index}
                             className={cn(
-                              'hover:text-primary text-lg leading-6 mb-1 last:mb-0 font-medium transition duration-300',
+                              'hover:text-primary mb-1 text-lg font-medium leading-6 transition duration-300 last:mb-0',
                               link.url == pathname ? 'text-primary' : 'text-tertiary'
                             )}
                             href={link.url}
@@ -128,7 +125,7 @@ const Header: React.FC = () => {
         </Dialog>
       </Transition>
 
-      <div aria-hidden="true" className="block h-18" />
+      <div aria-hidden="true" className="h-18" />
     </>
   )
 }

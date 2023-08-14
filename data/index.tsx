@@ -13,7 +13,9 @@ import {
   SiGnubash,
   SiSvelte,
   SiNestjs,
-  SiMatrix
+  SiMatrix,
+  SiC,
+  SiCplusplus
 } from 'react-icons/si'
 import { FaCss3, FaLinux, FaReact, FaVuejs } from 'react-icons/fa'
 import { Hexagon, Mail, Send, Terminal } from 'lucide-react'
@@ -48,8 +50,16 @@ const data = {
         icon: <SiLua />
       },
       {
-        name: 'Rust',
+        name: '*Rust',
         icon: <SiRust />
+      },
+      {
+        name: '*C',
+        icon: <SiC />
+      },
+      {
+        name: '*C++',
+        icon: <SiCplusplus />
       },
       {
         name: 'Bash',
@@ -114,7 +124,7 @@ const data = {
     ]
   },
   journey: {
-    2023: ['Started learning Rust', 'Started learning Svelte'],
+    2023: ['Started learning Rust & C', 'Started learning Svelte'],
     2022: ['Learned lua'],
     2021: ['Learned Typescript', 'Learned basic React & Vue', 'Learned Tailwindcss & Sass'],
     2020: ['Learned Javascript', 'PHP', 'Learned Python'],

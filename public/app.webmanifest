@@ -1,8 +1,0 @@
-{
-  "name": "budchirp",
-  "short_name": "budchirp",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#fff",
-  "description": "budchirp's website"
-}

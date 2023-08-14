@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Loading: React.FC = (): JSX.Element => {
-  return <p className="font-medium text-lg">loading...</p>
+  return <p className="text-lg font-medium">loading...</p>
 }
 
 export default Loading

@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps): JSX.Element =
     <Container>
       <PageHeader>Projects</PageHeader>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">{children}</div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">{children}</div>
     </Container>
   )
 }

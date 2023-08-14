@@ -46,10 +46,10 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-90"
       >
-        <Listbox.Options className={cn('fixed z-[100] w-screen origin-[75%_0%] md:origin-[90%_0%] top-[5.5rem] flex justify-center inset-x-0')}>
+        <Listbox.Options className={cn('fixed inset-x-0 top-[5.5rem] z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]')}>
           <Container className="flex items-center justify-center">
-            <div className="relative flex justify-right items-right w-full">
-              <div className="top-0 right-2 absolute w-38 rounded-2xl bg-primary border border-primary">
+            <div className="justify-right items-right relative flex w-full">
+              <div className="w-38 bg-primary border-primary absolute right-2 top-0 rounded-2xl border">
                 {(Object.keys(themes) as Theme[]).map((theme: Theme): JSX.Element => {
                   const [label, Icon] = themes[theme]
 
@@ -58,7 +58,7 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                       key={theme}
                       className={({ selected }) =>
                         cn(
-                          'border-b cursor-pointer border-primary transition-all duration-150 py-2 px-4 flex items-center hover:bg-secondary first:rounded-t-2xl last:rounded-b-2xl',
+                          'border-primary hover:bg-secondary flex cursor-pointer items-center border-b px-4 py-2 transition-all duration-150 first:rounded-t-2xl last:rounded-b-2xl',
                           selected ? 'bg-secondary' : 'bg-primary'
                         )
                       }
@@ -67,8 +67,8 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                       {({ selected }) => (
                         <p
                           className={cn(
-                            'flex items-center transition-all hover:text-accent-primary hover:font-bold duration-300',
-                            selected ? 'font-bold text-accent-primary' : 'font-medium text-primary'
+                            'hover:text-accent-primary flex items-center transition-all duration-300',
+                            selected ? 'text-accent-primary font-bold hover:font-semibold' : 'text-primary font-semibold hover:font-bold'
                           )}
                         >
                           <span className="mr-2">

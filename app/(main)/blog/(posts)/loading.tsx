@@ -9,20 +9,20 @@ const Loading: React.FC = (): JSX.Element => {
         return (
           <Box key={index}>
             <div className="mb-2">
-              <hr className="h-48 w-8/12 animate-pulse rounded-2xl bg-tertiary" />
+              <hr className="bg-tertiary h-48 w-8/12 animate-pulse rounded-2xl" />
             </div>
 
             <div className="mb-2">
-              <hr className="h-3 w-8/12 animate-pulse rounded bg-tertiary" />
+              <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
             </div>
 
             <div className="mb-2 space-y-1">
-              <hr className="h-3 w-full animate-pulse rounded bg-tertiary" />
-              <hr className="h-3 w-full animate-pulse rounded bg-tertiary" />
+              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
+              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
             </div>
 
             <div>
-              <hr className="h-3 w-full animate-pulse rounded bg-tertiary" />
+              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
             </div>
           </Box>
         )

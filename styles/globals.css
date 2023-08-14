@@ -62,7 +62,7 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
-  @apply antialiased font-main selection:bg-accent-300/90 selection:text-black/90;
+  @apply font-main antialiased selection:bg-accent-300/90 selection:text-black/90;
 }
 
 html {
@@ -75,9 +75,9 @@ hr {
 }
 
 [data-bright-theme='github-dark'] {
-  @apply !font-mono !bg-gray-800 !rounded-xl !px-0 !py-1;
+  @apply !rounded-xl !bg-gray-800 !px-0 !py-1 !font-mono;
 }
 
 pre {
-  @apply !font-mono !bg-gray-800 !rounded-2xl !p-0;
+  @apply !rounded-2xl !bg-gray-800 !p-0 !font-mono;
 }
