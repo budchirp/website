@@ -1,6 +1,7 @@
 'use client'
 
 import React, { Fragment, useEffect, useState } from 'react'
+
 import { cn } from '@/lib/cn'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { Container } from '@/components/Container'
@@ -39,9 +40,12 @@ const Header: React.FC = () => {
             <div className="hidden flex-row-reverse items-center gap-2 md:flex">
               {links.map((link: LinkProps, index: number) => (
                 <Link
-                  href={link.url}
                   key={index}
-                  className={cn('hover:text-primary transition duration-150', link.url == pathname ? 'text-primary' : 'text-tertiary')}
+                  className={cn(
+                    'hover:text-primary text-lg leading-6 transition duration-300',
+                    link.url == pathname ? 'text-primary font-bold' : 'text-tertiary font-medium'
+                  )}
+                  href={link.url}
                 >
                   {link.label}
                 </Link>
@@ -69,7 +73,7 @@ const Header: React.FC = () => {
         <Dialog onClose={() => setIsMobileMenuOpened(false)}>
           <Transition.Child
             as="div"
-            enter="transition-all ease-out duration-450"
+            enter="transition-all ease-out duration-300"
             enterFrom="opacity-0"
             enterTo="opacity-100"
             leave="transition-all ease-in duration-150"
@@ -79,7 +83,7 @@ const Header: React.FC = () => {
               setIsMobileMenuOpened(false)
             }}
             aria-hidden="true"
-            className="fixed inset-0 z-[75] h-screen w-screen bg-gray-100/25 bg-blend-overlay backdrop-blur dark:bg-black/10 md:hidden"
+            className="fixed inset-0 z-[75] h-screen w-screen bg-gray-100/25 bg-blend-overlay backdrop-blur dark:bg-black/25 md:hidden"
           />
 
           <Transition.Child
@@ -101,14 +105,14 @@ const Header: React.FC = () => {
                       </Dialog.Title>
                     </div>
 
-                    <div className="my-2 flex flex-col px-6">
+                    <div className="my-2 grid gap-1 px-6">
                       {links.map(
                         (link: LinkProps, index: number): JSX.Element => (
                           <Link
                             key={index}
                             className={cn(
-                              'hover:text-primary mb-1 text-lg font-medium leading-6 transition duration-300 last:mb-0',
-                              link.url == pathname ? 'text-primary' : 'text-tertiary'
+                              'hover:text-primary text-lg leading-6 transition duration-300',
+                              link.url == pathname ? 'text-primary font-bold' : 'text-tertiary font-medium'
                             )}
                             href={link.url}
                           >

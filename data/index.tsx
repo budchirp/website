@@ -50,15 +50,15 @@ const data = {
         icon: <SiLua />
       },
       {
-        name: '*Rust',
+        name: 'Rust',
         icon: <SiRust />
       },
       {
-        name: '*C',
+        name: 'C',
         icon: <SiC />
       },
       {
-        name: '*C++',
+        name: 'C++',
         icon: <SiCplusplus />
       },
       {

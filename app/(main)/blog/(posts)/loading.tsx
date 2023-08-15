@@ -1,30 +1,34 @@
 import React from 'react'
 
 import { Box } from '@/components/Box'
+import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import { Button } from '@/components/Button'
 
 const Loading: React.FC = (): JSX.Element => {
   return (
     <>
-      {[...Array(5)].map((_: any, index: number): JSX.Element => {
+      {[...Array(10)].map((_: any, index: number): JSX.Element => {
         return (
-          <Box key={index}>
-            <div className="mb-2">
-              <hr className="bg-tertiary h-48 w-8/12 animate-pulse rounded-2xl" />
-            </div>
+          <AnimateOnScroll key={index}>
+            <Box padding="none" key={index}>
+              <hr className="bg-tertiary h-48 w-full animate-pulse rounded-t-2xl" />
 
-            <div className="mb-2">
-              <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
-            </div>
+              <div className="grid gap-2 p-4">
+                <div>
+                  <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
+                </div>
 
-            <div className="mb-2 space-y-1">
-              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
-              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
-            </div>
+                <div className="grid gap-1">
+                  <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
+                  <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
+                </div>
 
-            <div>
-              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
-            </div>
-          </Box>
+                <Button disabled color="secondary">
+                  loading
+                </Button>
+              </div>
+            </Box>
+          </AnimateOnScroll>
         )
       })}
     </>

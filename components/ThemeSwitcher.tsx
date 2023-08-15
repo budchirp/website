@@ -1,4 +1,7 @@
+'use client'
+
 import React, { Fragment, useEffect, useState } from 'react'
+
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Listbox, Transition } from '@headlessui/react'
@@ -58,7 +61,7 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                       key={theme}
                       className={({ selected }) =>
                         cn(
-                          'border-primary hover:bg-secondary flex cursor-pointer items-center border-b px-4 py-2 transition-all duration-150 first:rounded-t-2xl last:rounded-b-2xl',
+                          'border-primary hover:bg-secondary flex cursor-pointer items-center border-b px-4 py-2 transition duration-300 first:rounded-t-2xl last:rounded-b-2xl',
                           selected ? 'bg-secondary' : 'bg-primary'
                         )
                       }
@@ -67,13 +70,11 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                       {({ selected }) => (
                         <p
                           className={cn(
-                            'hover:text-accent-primary flex items-center transition-all duration-300',
-                            selected ? 'text-accent-primary font-bold hover:font-semibold' : 'text-primary font-semibold hover:font-bold'
+                            'hover:text-accent-primary flex items-center transition duration-300',
+                            selected ? 'text-accent-primary font-bold' : 'text-primary font-medium'
                           )}
                         >
-                          <span className="mr-2">
-                            <Icon />
-                          </span>
+                          <Icon className="mr-2" />
                           {label}
                         </p>
                       )}

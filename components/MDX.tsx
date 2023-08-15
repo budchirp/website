@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Code } from 'bright'
 import Link from 'next/link'
 

@@ -9,11 +9,16 @@ import { genMetadata } from '@/lib/gen-metadata'
 
 import type { Metadata } from 'next'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import { notFound } from 'next/navigation'
 
 const metadata: Metadata = genMetadata({ title: 'Blog' })
 
 const Page: React.FC = async (): Promise<JSX.Element> => {
   const posts = await new Post().getAll()
+
+  if (!posts || posts.length < 0) {
+    notFound()
+  }
 
   return (
     <>
@@ -31,19 +36,19 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
                 </Link>
               </div>
 
-              <div className="w-full space-y-1 p-4">
-                <h6 className="text-tertiary flex items-center text-sm font-medium">
-                  <span className="mr-1 text-xs font-normal">
-                    <Calendar className="h-4 w-4" />
-                  </span>
-                  {post.date}
-                </h6>
+              <div className="grid w-full gap-2 p-4">
+                <div>
+                  <div className="flex items-center">
+                    <Calendar className="mr-1 h-4 w-4 text-xs" />
+                    <p className="text-tertiary text-sm font-medium">{post.date}</p>
+                  </div>
 
-                <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                  <h1 className="hover:text-tertiary break-all text-xl font-bold transition duration-300">{post.title}</h1>
-                </Link>
+                  <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
+                    <h1 className="hover:text-tertiary break-all text-xl font-bold transition duration-300">{post.title}</h1>
+                  </Link>
 
-                <p className="text-secondary">{post.description}</p>
+                  <p className="text-secondary">{post.description}</p>
+                </div>
 
                 <Link href={'/blog/' + post.slug}>
                   <Button className="w-full">Read more</Button>

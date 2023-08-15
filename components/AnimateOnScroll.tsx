@@ -1,8 +1,9 @@
 'use client'
 
 import React, { type ComponentProps } from 'react'
-import { cn } from '@/lib/cn'
+
 import { useElementOnScreen } from '@/lib/useElementOnScreen'
+import { cn } from '@/lib/cn'
 
 type AnimateOnScrollProps = {} & ComponentProps<'div'>
 

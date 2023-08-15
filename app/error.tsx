@@ -15,7 +15,9 @@ const metadata: Metadata = genMetadata({ title: 'Error' })
 const Error: React.FC<ErrorProps> = ({ reset }: ErrorProps): JSX.Element => {
   return (
     <Container>
-      <VerticalPage items={['Something', 'went', 'wrong!']} title={':('} customPart={<Button onClick={reset}>Try again</Button>} />
+      <VerticalPage items={['Something', 'went', 'wrong!']} title={':('}>
+        <Button onClick={reset}>Try again</Button>
+      </VerticalPage>
     </Container>
   )
 }

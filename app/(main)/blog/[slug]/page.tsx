@@ -48,12 +48,6 @@ const Page: React.FC<DynamicPageProps> = async ({ params: { slug } }: DynamicPag
 
   return (
     <>
-      <div className="mt-4 flex h-min w-full items-center justify-center">
-        <div className="flex h-min w-full items-center justify-center md:w-9/12 lg:w-8/12">
-          <img className="border-primary my-2 max-h-48 w-full rounded-2xl border object-cover md:max-h-64" alt={post.title} src={post.imageUrl} />
-        </div>
-      </div>
-
       <PageHeader
         bottomPart={
           <>
@@ -68,7 +62,6 @@ const Page: React.FC<DynamicPageProps> = async ({ params: { slug } }: DynamicPag
             </span>
           </>
         }
-        className="!mt-4"
       >
         {post.title}
       </PageHeader>

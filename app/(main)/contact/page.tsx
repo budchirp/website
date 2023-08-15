@@ -24,7 +24,7 @@ const Page: React.FC = (): JSX.Element => {
 
               <Link
                 href={contact.link || '/contact'}
-                className="text-primary hover:text-tertiary flex-1 text-xl font-bold transition-all duration-300"
+                className="text-primary hover:text-tertiary flex-1 text-xl font-bold transition duration-300"
                 rel="noreferrer"
                 target="_blank"
               >

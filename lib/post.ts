@@ -2,14 +2,13 @@ import fs from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
-import { cache } from 'react'
 
 import type { BlogPost, PostBody, RawPost } from '@/types/post'
 
 class Post {
   static path: string = process.cwd() + '/posts'
 
-  private async _getAll(): Promise<BlogPost[] | []> {
+  async getAll(): Promise<BlogPost[] | []> {
     const postFiles: string[] = await fs.readdir(Post.path)
 
     const posts: BlogPost[] = await Promise.all(
@@ -27,10 +26,6 @@ class Post {
     )
 
     return posts || []
-  }
-
-  async getAll(): Promise<BlogPost[] | []> {
-    return cache<typeof this._getAll>(this._getAll)() || []
   }
 
   async getBySlug(slug: string): Promise<BlogPost | null | undefined> {

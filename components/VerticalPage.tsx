@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
+
+import { cn } from '@/lib/cn'
 
 type VerticalPageProps = {
   title: React.ReactNode
   items: React.ReactNode[]
-  customPart?: React.ReactNode
-}
+} & ComponentProps<'div'>
 
-const VerticalPage: React.FC<VerticalPageProps> = ({ title, items, customPart }: VerticalPageProps): JSX.Element => {
+const VerticalPage: React.FC<VerticalPageProps> = ({ className, children, title, items, ...props }: VerticalPageProps): JSX.Element => {
   return (
-    <div className="h-screen_ flex flex-col justify-center space-y-4">
+    <div {...props} className={cn('h-screen_ flex flex-col justify-center space-y-4', className)}>
       <h2 className="text-accent-primary text-5xl font-bold">{title}</h2>
 
       <div className="space-y-1">
@@ -21,7 +22,7 @@ const VerticalPage: React.FC<VerticalPageProps> = ({ title, items, customPart }:
         )}
       </div>
 
-      {customPart && <div>{customPart}</div>}
+      {children && <div>{children}</div>}
     </div>
   )
 }
