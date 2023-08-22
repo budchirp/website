@@ -70,7 +70,7 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                       {({ selected }) => (
                         <p
                           className={cn(
-                            'hover:text-accent-primary flex items-center transition duration-300',
+                            'hover:text-tertiary hover:font-bold flex items-center transition duration-300',
                             selected ? 'text-accent-primary font-bold' : 'text-primary font-medium'
                           )}
                         >
