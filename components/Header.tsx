@@ -14,6 +14,26 @@ import { Menu, X } from 'lucide-react'
 import { Box } from './Box'
 import { type LinkProps, links } from '@/lib/links'
 
+type HeaderLinkProps = {
+  pathname: string
+  label: string
+  url: string
+}
+
+const HeaderLink: React.FC<HeaderLinkProps> = ({ pathname, label, url }: HeaderLinkProps): React.ReactNode => {
+  return (
+    <Link
+      className={cn(
+        'hover:text-primary text-lg leading-6 transition-all duration-300 hover:font-bold',
+        url == pathname ? 'text-primary font-bold' : 'text-tertiary font-medium'
+      )}
+      href={url}
+    >
+      {label}
+    </Link>
+  )
+}
+
 const Header: React.FC = () => {
   const pathname = usePathname()
 
@@ -39,16 +59,7 @@ const Header: React.FC = () => {
           <div className="flex h-full items-center space-x-2">
             <div className="hidden flex-row-reverse items-center gap-2 md:flex">
               {links.map((link: LinkProps, index: number) => (
-                <Link
-                  key={index}
-                  className={cn(
-                    'hover:text-primary text-lg leading-6 transition duration-300',
-                    link.url == pathname ? 'text-primary font-bold' : 'text-tertiary font-medium'
-                  )}
-                  href={link.url}
-                >
-                  {link.label}
-                </Link>
+                <HeaderLink pathname={pathname} label={link.label} url={link.url} key={index} />
               ))}
             </div>
 
@@ -107,17 +118,8 @@ const Header: React.FC = () => {
 
                     <div className="my-2 grid gap-1 px-6">
                       {links.map(
-                        (link: LinkProps, index: number): JSX.Element => (
-                          <Link
-                            key={index}
-                            className={cn(
-                              'hover:text-primary text-lg leading-6 transition duration-300',
-                              link.url == pathname ? 'text-primary font-bold' : 'text-tertiary font-medium'
-                            )}
-                            href={link.url}
-                          >
-                            {link.label}
-                          </Link>
+                        (link: LinkProps, index: number): React.ReactNode => (
+                          <HeaderLink pathname={pathname} label={link.label} url={link.url} key={index} />
                         )
                       )}
                     </div>

@@ -7,7 +7,7 @@ type ScrollToTopProps = {
   children: React.ReactNode
 }
 
-const ScrollToTop: React.FC<ScrollToTopProps> = ({ children }): JSX.Element => {
+const ScrollToTop: React.FC<ScrollToTopProps> = ({ children }): React.ReactNode => {
   const pathname = usePathname()
 
   useLayoutEffect(() => {

@@ -4,10 +4,10 @@ import { Box } from '@/components/Box'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { Button } from '@/components/Button'
 
-const Loading: React.FC = (): JSX.Element => {
+const Loading: React.FC = (): React.ReactNode => {
   return (
     <>
-      {[...Array(10)].map((_: any, index: number): JSX.Element => {
+      {[...Array(10)].map((_: any, index: number): React.ReactNode => {
         return (
           <AnimateOnScroll key={index}>
             <Box padding="none" key={index}>

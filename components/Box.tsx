@@ -22,7 +22,7 @@ const boxVariants = cva(['rounded-2xl'], {
 
 type BoxProps = {} & ComponentProps<'div'> & VariantProps<typeof boxVariants>
 
-const Box = ({ children, className, padding, variant, ...props }: BoxProps): JSX.Element => {
+const Box = ({ children, className, padding, variant, ...props }: BoxProps): React.ReactNode => {
   return (
     <div {...props} className={cn(boxVariants({ className, padding, variant }))}>
       {children}

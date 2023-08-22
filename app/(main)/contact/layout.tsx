@@ -5,7 +5,7 @@ import { PageHeader } from '@/components/PageHeader'
 
 import type { LayoutProps } from '@/types/layout'
 
-const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps): JSX.Element => {
+const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps): React.ReactNode => {
   return (
     <Container>
       <PageHeader>Contact me</PageHeader>

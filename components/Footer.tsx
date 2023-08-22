@@ -7,7 +7,7 @@ import data from '@/data'
 import { Github } from 'lucide-react'
 import Link from 'next/link'
 
-const Footer: React.FC = (): JSX.Element => {
+const Footer: React.FC = (): React.ReactNode => {
   return (
     <footer className="border-primary mt-4 flex h-18 w-full items-center justify-center border-t">
       <Container className="flex h-full items-center justify-between">

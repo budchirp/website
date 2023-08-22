@@ -7,10 +7,10 @@ type PageHeaderProps = {
   bottomPart?: React.ReactNode
 } & ComponentProps<'div'>
 
-const PageHeader: React.FC<PageHeaderProps> = ({ className, children, topPart, bottomPart, ...props }: PageHeaderProps): JSX.Element => {
+const PageHeader: React.FC<PageHeaderProps> = ({ className, children, topPart, bottomPart, ...props }: PageHeaderProps): React.ReactNode => {
   return (
     <div {...props} className={cn('mb-4 mt-8 w-full border-b-[5px] border-gray-50 pb-2 dark:border-gray-800', className)}>
-      {topPart && <div className="mt-1 w-full">{topPart}</div>}
+      {topPart && <div className="w-full">{topPart}</div>}
 
       <h2 className="break-all text-3xl font-bold">{children}</h2>
 

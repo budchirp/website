@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 const metadata: Metadata = genMetadata({ title: 'Contact me' })
 
-const Page: React.FC = (): JSX.Element => {
+const Page: React.FC = (): React.ReactNode => {
   return (
     <>
       {Object.keys(data.contact).map((platform: string, index: number): React.ReactNode => {

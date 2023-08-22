@@ -12,7 +12,7 @@ import { genMetadata } from '@/lib/gen-metadata'
 
 const metadata: Metadata = genMetadata({ title: 'Error' })
 
-const Error: React.FC<ErrorProps> = ({ reset }: ErrorProps): JSX.Element => {
+const Error: React.FC<ErrorProps> = ({ reset }: ErrorProps): React.ReactNode => {
   return (
     <Container>
       <VerticalPage items={['Something', 'went', 'wrong!']} title={':('}>

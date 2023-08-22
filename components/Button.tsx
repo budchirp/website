@@ -30,7 +30,7 @@ type ButtonProps = {} & ComponentProps<'button'> &
     children?: React.ReactNode
   }
 
-const Button = ({ children, disabled, className, variant, color, ...props }: ButtonProps): JSX.Element => {
+const Button = ({ children, disabled, className, variant, color, ...props }: ButtonProps): React.ReactNode => {
   if (!children) disabled = true
 
   return (

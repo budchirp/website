@@ -13,7 +13,7 @@ import { notFound } from 'next/navigation'
 
 const metadata: Metadata = genMetadata({ title: 'Blog' })
 
-const Page: React.FC = async (): Promise<JSX.Element> => {
+const Page: React.FC = async (): Promise<React.ReactNode> => {
   const posts = await new Post().getAll()
 
   if (!posts || posts.length < 0) {
@@ -23,7 +23,7 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
   return (
     <>
       {posts.map(
-        (post): JSX.Element => (
+        (post): React.ReactNode => (
           <AnimateOnScroll key={post.slug}>
             <Box className="h-min" padding="none">
               <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">

@@ -7,7 +7,7 @@ import { cn } from '@/lib/cn'
 
 type AnimateOnScrollProps = {} & ComponentProps<'div'>
 
-const AnimateOnScroll = (props: AnimateOnScrollProps): JSX.Element => {
+const AnimateOnScroll = (props: AnimateOnScrollProps): React.ReactNode => {
   const [ref, visible] = useElementOnScreen()
 
   return (

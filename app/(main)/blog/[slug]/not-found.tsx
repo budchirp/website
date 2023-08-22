@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 
 const metadata: Metadata = genMetadata({ title: 'Blog post not found!' })
 
-const NotFound: React.FC<ErrorProps> = (): JSX.Element => {
+const NotFound: React.FC<ErrorProps> = (): React.ReactNode => {
   return (
     <Container>
       <VerticalPage items={['Blog', 'post', 'not', 'found!']} title={'🙈'} />

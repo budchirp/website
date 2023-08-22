@@ -58,7 +58,7 @@ const metadata: Metadata = {
 const lexend = Lexend({ subsets: ['latin'], variable: '--font-main' })
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
-const RootLayout: React.FC<LayoutProps> = ({ children }: LayoutProps): JSX.Element => {
+const RootLayout: React.FC<LayoutProps> = ({ children }: LayoutProps): React.ReactNode => {
   return (
     <html suppressHydrationWarning lang="en-US">
       <body

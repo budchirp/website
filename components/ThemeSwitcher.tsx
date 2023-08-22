@@ -18,7 +18,7 @@ const themes: { [key in Theme]: [string, LucideIcon] } = {
   system: ['System', Laptop]
 }
 
-const ThemeSwitcher: React.FC = (): JSX.Element => {
+const ThemeSwitcher: React.FC = (): React.ReactNode => {
   const { theme, setTheme }: { theme: Theme; setTheme: (theme: Theme) => void } = useTheme() as any
 
   const [mounted, setMounted] = useState<boolean>(false)
@@ -53,7 +53,7 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
           <Container className="flex items-center justify-center">
             <div className="justify-right items-right relative flex w-full">
               <div className="w-38 bg-primary border-primary absolute right-2 top-0 rounded-2xl border">
-                {(Object.keys(themes) as Theme[]).map((theme: Theme): JSX.Element => {
+                {(Object.keys(themes) as Theme[]).map((theme: Theme): React.ReactNode => {
                   const [label, Icon] = themes[theme]
 
                   return (

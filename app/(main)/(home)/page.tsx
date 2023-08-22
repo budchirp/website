@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 
 const metadata: Metadata = genMetadata({ title: 'About me' })
 
-const Page: React.FC = (): JSX.Element => {
+const Page: React.FC = (): React.ReactNode => {
   return (
     <div className="mt-16 grid gap-4">
       <AnimateOnScroll>
@@ -26,12 +26,12 @@ const Page: React.FC = (): JSX.Element => {
 
         <div>
           {Object.keys(data.skills).map(
-            (key: string, index: number): JSX.Element => (
+            (key: string, index: number): React.ReactNode => (
               <AnimateOnScroll key={index}>
                 <span className="text-tertiary text-sm">{key}</span>
                 <div className="my-4 grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                   {/* @ts-ignore */}
-                  {data.skills[key].map((skill: any, index: number): JSX.Element => {
+                  {data.skills[key].map((skill: any, index: number): React.ReactNode => {
                     return (
                       <Box key={index} padding="none" className="flex items-center space-x-3 p-2">
                         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">
@@ -57,13 +57,13 @@ const Page: React.FC = (): JSX.Element => {
           {Object.keys(data.journey)
             .reverse()
             .map(
-              (key: string, index: number): JSX.Element => (
+              (key: string, index: number): React.ReactNode => (
                 <AnimateOnScroll key={index} className="mb-2 grid grid-cols-2">
                   <span className="text-accent-primary text-2xl font-bold">{key}</span>
                   <div>
                     {/* @ts-ignore */}
                     {data.journey[key].map(
-                      (text: string, index: number): JSX.Element => (
+                      (text: string, index: number): React.ReactNode => (
                         <div key={index} className="flex">
                           <span className="text-primary-600 mr-2">-</span>
                           <p className="text-secondary">{text}</p>

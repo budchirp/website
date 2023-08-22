@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Box } from '@/components/Box'
 
-const Loading: React.FC = (): JSX.Element => {
+const Loading: React.FC = (): React.ReactNode => {
   return (
     <>
       {[...Array(10)].map((_, index) => {
