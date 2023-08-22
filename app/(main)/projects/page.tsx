@@ -11,7 +11,16 @@ import type { Metadata } from 'next'
 
 const metadata: Metadata = genMetadata({ title: 'Projects' })
 
-const Page: React.FC = async (): Promise<React.ReactNode> => {
+const Page: React.FC = async (): Promise<
+  | string
+  | number
+  | boolean
+  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+  | Iterable<React.ReactNode>
+  | React.ReactPortal
+  | null
+  | undefined
+> => {
   const reposRes = await fetch(`https://api.github.com/users/${data.githubUsername}/repos`, {
     cache: 'no-cache'
   })

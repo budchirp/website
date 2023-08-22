@@ -39,7 +39,18 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   })
 }
 
-const Page: React.FC<DynamicPageProps> = async ({ params: { slug } }: DynamicPageProps): Promise<React.ReactNode> => {
+const Page: React.FC<DynamicPageProps> = async ({
+  params: { slug }
+}: DynamicPageProps): Promise<
+  | string
+  | number
+  | boolean
+  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+  | Iterable<React.ReactNode>
+  | React.ReactPortal
+  | null
+  | undefined
+> => {
   const post = await new Post().getBySlug(slug)
 
   if (!post) {

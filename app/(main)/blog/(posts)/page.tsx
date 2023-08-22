@@ -13,7 +13,16 @@ import { notFound } from 'next/navigation'
 
 const metadata: Metadata = genMetadata({ title: 'Blog' })
 
-const Page: React.FC = async (): Promise<React.ReactNode> => {
+const Page: React.FC = async (): Promise<
+  | string
+  | number
+  | boolean
+  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+  | Iterable<React.ReactNode>
+  | React.ReactPortal
+  | null
+  | undefined
+> => {
   const posts = await new Post().getAll()
 
   if (!posts || posts.length < 0) {
