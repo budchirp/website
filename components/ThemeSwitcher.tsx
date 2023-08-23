@@ -52,7 +52,7 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
         <Listbox.Options className={cn('fixed inset-x-0 top-[5.5rem] z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]')}>
           <Container className="flex items-center justify-center">
             <div className="justify-right items-right relative flex w-full">
-              <div className="bg-primary border-primary absolute right-2 top-0 w-40 rounded-2xl border">
+              <div className="bg-primary border-primary absolute right-2 top-0 w-36 rounded-2xl border">
                 {(Object.keys(themes) as Theme[]).map((theme: Theme): React.ReactNode => {
                   const [label, Icon] = themes[theme]
 
@@ -62,7 +62,7 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                       className={({ selected }) =>
                         cn(
                           'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 first:rounded-t-2xl last:rounded-b-2xl',
-                          selected ? 'bg-secondary' : 'bg-primary hover:bg-secondary'
+                          selected ? 'bg-secondary' : 'bg-primary'
                         )
                       }
                       value={theme}
@@ -70,8 +70,8 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                       {({ selected }) => (
                         <p
                           className={cn(
-                            'flex h-full w-full items-center transition-all duration-300',
-                            selected ? 'text-accent-primary font-bold' : 'text-primary hover:text-accent-primary font-medium hover:font-bold'
+                            'flex h-full w-full items-center font-medium transition duration-300',
+                            selected ? 'text-accent-primary' : 'text-primary hover:text-tertiary'
                           )}
                         >
                           <Icon className="mr-2" />
