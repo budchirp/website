@@ -5,10 +5,10 @@ import React from 'react'
 import { VerticalPage } from '@/components/VerticalPage'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
+import { genMetadata } from '@/lib/gen-metadata'
 
 import type { ErrorProps } from '@/types/error'
 import type { Metadata } from 'next'
-import { genMetadata } from '@/lib/gen-metadata'
 
 const metadata: Metadata = genMetadata({ title: 'Error' })
 

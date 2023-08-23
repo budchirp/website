@@ -17,11 +17,11 @@ class Post {
         .map(async (file: string) => {
           const fileContent: string = await fs.readFile(Post.path + '/' + file, 'utf-8')
 
-          const { data, content }: { data: RawPost; content: PostBody } = matter(fileContent) as any
+          const { data: metaData, content }: { data: RawPost; content: PostBody } = matter(fileContent) as any
 
-          let newData: Omit<BlogPost, 'body'> = { ...data, tags: data.tags.split(', '), readingTime: readingTime(content).text }
+          let newMetaData: Omit<BlogPost, 'body'> = { ...metaData, tags: metaData.tags.split(', '), readingTime: readingTime(content).text }
 
-          return { ...newData, body: content } as BlogPost
+          return { ...newMetaData, body: content } as BlogPost
         })
     )
 
