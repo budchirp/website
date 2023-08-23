@@ -39,9 +39,9 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   })
 }
 
-const Page: React.FC<DynamicPageProps> = async ({
-  params: { slug }
-}: DynamicPageProps): Promise<
+const Page: React.FC<DynamicPageProps> = async (
+  { params: { slug } }: DynamicPageProps
+): Promise<
   | string
   | number
   | boolean
