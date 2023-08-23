@@ -61,8 +61,8 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                       key={theme}
                       className={({ selected }) =>
                         cn(
-                          'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 first:rounded-t-2xl last:rounded-b-2xl',
-                          selected ? 'bg-secondary' : 'bg-primary'
+                          'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 transition duration-300 first:rounded-t-2xl last:rounded-b-2xl',
+                          selected ? 'bg-secondary' : 'bg-primary hover:bg-secondary'
                         )
                       }
                       value={theme}

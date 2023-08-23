@@ -44,7 +44,7 @@
   }
 
   .text-accent-primary {
-    @apply text-accent-600 dark:text-accent-300;
+    @apply text-accent-600 dark:text-accent-400;
   }
 
   .text-accent-secondary {
