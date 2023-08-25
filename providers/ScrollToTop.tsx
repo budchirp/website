@@ -14,7 +14,7 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({ children }): React.ReactNode 
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [pathname])
 
-  return <>{children}</>
+  return children
 }
 
 export { ScrollToTop }

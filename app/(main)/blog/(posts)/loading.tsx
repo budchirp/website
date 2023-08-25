@@ -17,9 +17,7 @@ const Loading: React.FC = (): React.ReactNode => {
           <hr className="bg-tertiary h-48 w-full animate-pulse rounded-t-2xl" />
 
           <div className="grid gap-2 p-4">
-            <div>
-              <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
-            </div>
+            <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
 
             <div className="grid gap-1">
               <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />

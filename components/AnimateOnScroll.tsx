@@ -11,7 +11,11 @@ const AnimateOnScroll = ({ children, className, ...props }: AnimateOnScrollProps
   const [ref, visible] = useElementOnScreen()
 
   return (
-    <div {...props} ref={ref} className={cn('transition duration-300', visible ? 'opacity-100 ease-out' : 'opacity-0 ease-in', className)}>
+    <div
+      {...props}
+      ref={ref}
+      className={cn('transition duration-300', (visible === null ? true : visible) ? 'opacity-100 ease-out' : 'opacity-0 ease-in', className)}
+    >
       {children}
     </div>
   )

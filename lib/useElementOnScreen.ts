@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 
-const useElementOnScreen = (): [React.RefObject<HTMLDivElement>, boolean] => {
+const useElementOnScreen = (): [React.RefObject<HTMLDivElement>, boolean | null] => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState<boolean>(false)
+
+  const [mounted, setMounted] = useState<boolean>(false)
+  const [isVisible, setIsVisible] = useState<boolean>(true)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const makeAppearRepeating = (entries: any) => {
     const [entry] = entries
@@ -23,7 +29,7 @@ const useElementOnScreen = (): [React.RefObject<HTMLDivElement>, boolean] => {
     }
   }, [containerRef, callback])
 
-  return [containerRef, isVisible]
+  return [containerRef, !mounted ? null : isVisible]
 }
 
 export { useElementOnScreen }

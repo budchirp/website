@@ -62,13 +62,13 @@ const Page: React.FC<DynamicPageProps> = async ({
       <PageHeader
         bottomPart={
           <>
-            <span className="text-secondary flex space-x-1 text-sm font-bold">
+            <span className="text-secondary flex gap-1 text-sm font-bold">
               <User className="h-4 w-4" /> <p>{post.author}</p>
             </span>
-            <span className="text-secondary flex space-x-1 text-sm font-bold">
+            <span className="text-secondary flex gap-1 text-sm font-bold">
               <Calendar className="h-4 w-4" /> <p>{post.date.replaceAll('-', '/')}</p>
             </span>
-            <span className="text-secondary flex space-x-1 text-sm font-bold">
+            <span className="text-secondary flex gap-1 text-sm font-bold">
               <Book className="h-4 w-4" /> <p>{post.readingTime}</p>
             </span>
           </>

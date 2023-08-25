@@ -33,7 +33,7 @@ const Page: React.FC = (): React.ReactNode => {
                   {/* @ts-ignore */}
                   {data.skills[key].map((skill: any, index: number): React.ReactNode => {
                     return (
-                      <Box key={index} padding="none" className="flex items-center space-x-3 p-2">
+                      <Box key={index} padding="none" className="flex items-center gap-3 p-2">
                         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">
                           {skill.icon}
                         </span>

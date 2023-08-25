@@ -34,7 +34,7 @@ const Page: React.FC = async (): Promise<
 
     return (
       <AnimateOnScroll key={index}>
-        <Box className="hover:bg-tertiary space-y-1 transition duration-300">
+        <Box className="hover:bg-tertiary grid gap-1 transition duration-300">
           <Link
             href={repo.html_url}
             rel="noreferrer"

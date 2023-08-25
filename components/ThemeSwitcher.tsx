@@ -70,12 +70,12 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                       {({ selected }) => (
                         <p
                           className={cn(
-                            'flex h-full w-full items-center font-medium transition duration-300',
+                            'flex h-full w-full items-center gap-2 font-medium transition duration-300',
                             selected ? 'text-accent-primary' : 'text-primary hover:text-tertiary'
                           )}
                         >
-                          <Icon className="mr-2" />
-                          {label}
+                          <Icon />
+                          <span>{label}</span>
                         </p>
                       )}
                     </Listbox.Option>

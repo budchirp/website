@@ -51,19 +51,19 @@ const Header: React.FC = () => {
           isMobileMenuOpened ? 'bg-opacity-100 ease-out' : '!bg-opacity-25 ease-in'
         )}
       >
-        <Container className="flex h-full items-center justify-between">
+        <Container className="flex h-full items-center justify-between gap-2">
           <Link href="/" aria-label="Logo">
             <Logo />
           </Link>
 
-          <div className="flex h-full items-center space-x-2">
+          <div className="flex h-full items-center gap-2">
             <div className="hidden flex-row-reverse items-center gap-2 md:flex">
               {links.map((link: LinkProps, index: number) => (
                 <HeaderLink pathname={pathname} label={link.label} url={link.url} key={index} />
               ))}
             </div>
 
-            <div className="flex h-full items-center space-x-2">
+            <div className="flex h-full items-center gap-2">
               <ThemeSwitcher />
 
               <Button
