@@ -13,7 +13,7 @@ const Loading: React.FC = (): React.ReactNode => {
   return [...Array(10)].map((_: any, index: number): React.ReactNode => {
     return (
       <AnimateOnScroll key={index}>
-        <Box padding="none" key={index}>
+        <Box padding="none">
           <hr className="bg-tertiary h-48 w-full animate-pulse rounded-t-2xl" />
 
           <div className="grid gap-2 p-4">

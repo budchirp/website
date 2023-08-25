@@ -11,8 +11,8 @@ const metadata: Metadata = genMetadata({ title: 'Loading projects...' })
 const Loading: React.FC = (): React.ReactNode => {
   return [...Array(10)].map((_, index) => {
     return (
-      <AnimateOnScroll>
-        <Box className="grid gap-2" key={index}>
+      <AnimateOnScroll key={index}>
+        <Box className="grid gap-2">
           <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
 
           <div className="grid gap-1">
