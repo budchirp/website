@@ -22,5 +22,6 @@ const Footer: React.FC = (): React.ReactNode => {
     </footer>
   )
 }
+Footer.displayName = 'Footer'
 
 export { Footer }

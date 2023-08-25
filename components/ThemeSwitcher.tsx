@@ -89,5 +89,6 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
     </Listbox>
   )
 }
+ThemeSwitcher.displayName = 'ThemeSwitcher'
 
 export { ThemeSwitcher, themes, type Theme }

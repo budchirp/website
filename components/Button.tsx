@@ -30,15 +30,19 @@ type ButtonProps = {} & ComponentProps<'button'> &
     children?: React.ReactNode
   }
 
-const Button = ({ children, disabled, className, variant, color, ...props }: ButtonProps): React.ReactNode => {
+const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>(({ children, disabled, className, variant, color, ...props }: ButtonProps, ref): React.ReactNode => {
   if (!children) disabled = true
 
   return (
-    <button {...props} className={cn(buttonVariants({ className, variant, color }))}>
+    <button {...props} ref={ref} className={cn(buttonVariants({ className, variant, color }))}>
       {disabled && <Loader2 className={cn('animate-spin text-xs', children ? 'mr-2' : '')} />}
       {children ?? ''}
     </button>
   )
-}
+})
+Button.displayName = 'Button'
 
 export { Button, type ButtonProps }

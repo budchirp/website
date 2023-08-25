@@ -1,7 +1,9 @@
-const colors = require('tailwindcss/colors')
+import colors from 'tailwindcss/colors'
+
+import type { Config } from 'tailwindcss'
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
   darkMode: 'class',
   experimental: {
     optimizeUniversalDefaults: true
@@ -25,7 +27,7 @@ module.exports = {
         },
         accent: colors.rose
       },
-      typography: (theme) => ({
+      typography: (theme: any) => ({
         DEFAULT: {
           css: {
             blockQuote: {
@@ -214,3 +216,5 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar')]
 }
+
+export default config

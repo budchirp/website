@@ -23,7 +23,7 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   const post = (await new Post().getBySlug(slug)) as BlogPost
 
   return genMetadata({
-    title: `${post.title} | Blog`,
+    title: `${post.title} - Blog`,
     description: post.description,
     other: {
       openGraph: {
@@ -39,9 +39,9 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   })
 }
 
-const Page: React.FC<DynamicPageProps> = async (
-  { params: { slug } }: DynamicPageProps
-): Promise<
+const Page: React.FC<DynamicPageProps> = async ({
+  params: { slug }
+}: DynamicPageProps): Promise<
   | string
   | number
   | boolean
