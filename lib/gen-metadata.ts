@@ -1,3 +1,5 @@
+import data from '@/data'
+
 import type { Metadata } from 'next'
 
 type GenMetadataProps = {
@@ -11,11 +13,11 @@ const genMetadata = ({ title, description, other }: GenMetadataProps): Metadata 
 
   return {
     title,
-    description: description ?? undefined,
+    description: description || data.description,
 
     openGraph: {
       title,
-      description: description ?? undefined,
+      description: description || data.description,
       ...openGraph
     },
 

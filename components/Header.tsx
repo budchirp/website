@@ -52,9 +52,7 @@ const Header: React.FC = () => {
         )}
       >
         <Container className="flex h-full items-center justify-between gap-2">
-          <Link href="/" aria-label="Logo">
-            <Logo />
-          </Link>
+          <Logo />
 
           <div className="flex h-full items-center gap-2">
             <div className="hidden flex-row-reverse items-center gap-2 md:flex">
