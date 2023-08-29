@@ -10,28 +10,32 @@ import type { Metadata } from 'next'
 const metadata: Metadata = genMetadata({ title: 'Loading posts...' })
 
 const Loading: React.FC = (): React.ReactNode => {
-  return [...Array(10)].map((_: any, index: number): React.ReactNode => {
-    return (
-      <AnimateOnScroll key={index}>
-        <Box padding="none">
-          <hr className="bg-tertiary h-48 w-full animate-pulse rounded-t-2xl" />
+  return (
+    <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {[...Array(10)].map((_: any, index: number): React.ReactNode => {
+        return (
+          <AnimateOnScroll key={index}>
+            <Box padding="none">
+              <hr className="bg-tertiary h-48 w-full animate-pulse rounded-t-2xl" />
 
-          <div className="grid gap-2 p-4">
-            <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
+              <div className="grid gap-2 p-4">
+                <hr className="bg-tertiary h-3 w-8/12 animate-pulse rounded" />
 
-            <div className="grid gap-1">
-              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
-              <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
-            </div>
+                <div className="grid gap-1">
+                  <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
+                  <hr className="bg-tertiary h-3 w-full animate-pulse rounded" />
+                </div>
 
-            <Button disabled color="secondary">
-              loading
-            </Button>
-          </div>
-        </Box>
-      </AnimateOnScroll>
-    )
-  })
+                <Button disabled color="secondary">
+                  loading
+                </Button>
+              </div>
+            </Box>
+          </AnimateOnScroll>
+        )
+      })}
+    </div>
+  )
 }
 
 export { metadata }

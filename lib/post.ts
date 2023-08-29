@@ -14,18 +14,34 @@ class Post {
     const posts: BlogPost[] = await Promise.all(
       postFiles
         .filter((file: string) => path.extname(file) === '.md' || path.extname(file) === '.mdx')
+        .sort((a: string, b: string) => a.localeCompare(b, 'en', { numeric: true }))
         .map(async (file: string) => {
           const fileContent: string = await fs.readFile(Post.path + '/' + file, 'utf-8')
 
           const { data: metaData, content }: { data: RawPost; content: PostBody } = matter(fileContent) as any
 
-          let newMetaData: Omit<BlogPost, 'body'> = { ...metaData, tags: metaData.tags.split(', '), readingTime: readingTime(content).text }
+          let newMetaData: Omit<BlogPost, 'body'> = {
+            ...metaData,
+            id: metaData.slug,
+            tags: metaData.tags.split(', '),
+            readingTime: readingTime(content).text
+          }
 
           return { ...newMetaData, body: content } as BlogPost
         })
     )
 
     return posts || []
+  }
+
+  async paginate(posts: BlogPost[], page: number = 0, limit: number = 10): Promise<{ posts: BlogPost[] | []; page: number; totalPages: number }> {
+    const totalPages: number = Math.ceil(posts.length / limit) - 1 || 0
+
+    if (typeof page !== 'number' || page > totalPages || page < 0) {
+      return { posts: [], page: 0, totalPages: 0 }
+    }
+
+    return { posts: posts.slice(limit * page, limit * page + limit), page, totalPages }
   }
 
   async getBySlug(slug: string): Promise<BlogPost | null | undefined> {

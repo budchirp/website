@@ -4,9 +4,9 @@ import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { Box } from '@/components/Box'
 import { genMetadata } from '@/lib/gen-metadata'
 import data from '@/data'
+import Link from 'next/link'
 
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 const metadata: Metadata = genMetadata({ title: 'Contact me' })
 

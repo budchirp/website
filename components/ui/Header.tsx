@@ -2,17 +2,17 @@
 
 import React, { Fragment, useEffect, useState } from 'react'
 
-import { cn } from '@/lib/cn'
-import { ThemeSwitcher } from '@/components/ThemeSwitcher'
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
+import { Box } from '@/components/Box'
+import { type LinkProps, links } from '@/lib/links'
+import { cn } from '@/lib/cn'
 import { Dialog, Transition } from '@headlessui/react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { Box } from './Box'
-import { type LinkProps, links } from '@/lib/links'
 
 type HeaderLinkProps = {
   pathname: string
@@ -41,6 +41,8 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     setIsMobileMenuOpened(false)
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [pathname])
 
   return (

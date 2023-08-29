@@ -1,15 +1,15 @@
 import React from 'react'
 
+import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { Box } from '@/components/Box'
 import { genMetadata } from '@/lib/gen-metadata'
 
 import type { Metadata } from 'next'
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 
 const metadata: Metadata = genMetadata({ title: 'Loading projects...' })
 
 const Loading: React.FC = (): React.ReactNode => {
-  return [...Array(10)].map((_, index) => {
+  return [...Array(10)].map((_: any, index: number): React.ReactNode => {
     return (
       <AnimateOnScroll key={index}>
         <Box className="grid gap-2">

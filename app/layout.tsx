@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { ScrollToTop } from '@/providers/ScrollToTop'
 import { ThemeProvider } from '@/providers/Theme'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/ui/Header'
+import { Footer } from '@/components/ui/Footer'
 import { JetBrains_Mono, Lexend } from 'next/font/google'
 import { cn } from '@/lib/cn'
 import data from '@/data'
@@ -69,13 +68,11 @@ const RootLayout: React.FC<LayoutProps> = ({ children }: LayoutProps): React.Rea
         )}
       >
         <ThemeProvider>
-          <ScrollToTop>
-            <Header />
+          <Header />
 
-            <main className="min-h-screen_">{children}</main>
+          <main className="min-h-screen_">{children}</main>
 
-            <Footer />
-          </ScrollToTop>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

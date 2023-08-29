@@ -7,7 +7,7 @@ import { genMetadata } from '@/lib/gen-metadata'
 import type { ErrorProps } from '@/types/error'
 import type { Metadata } from 'next'
 
-const metadata: Metadata = genMetadata({ title: 'Page not found' })
+const metadata: Metadata = genMetadata({ title: 'Page not found!' })
 
 const NotFound: React.FC<ErrorProps> = (): React.ReactNode => {
   return (

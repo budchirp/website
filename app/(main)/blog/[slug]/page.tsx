@@ -16,11 +16,11 @@ import remarkToc from 'remark-toc'
 import a11yEmoji from '@fec/remark-a11y-emoji'
 
 import type { DynamicPageProps } from '@/types/page'
-import type { Metadata } from 'next'
 import type { BlogPost } from '@/types/post'
+import type { Metadata } from 'next'
 
 const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise<Metadata> => {
-  const post = (await new Post().getBySlug(slug)) as BlogPost
+  const post: BlogPost = (await new Post().getBySlug(slug)) as BlogPost
 
   return genMetadata({
     title: `${post.title} - Blog`,
@@ -39,9 +39,9 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   })
 }
 
-const Page: React.FC<DynamicPageProps> = async ({
-  params: { slug }
-}: DynamicPageProps): Promise<
+const Page: React.FC<DynamicPageProps> = async (
+  { params: { slug } }: DynamicPageProps
+): Promise<
   | string
   | number
   | boolean
@@ -51,7 +51,7 @@ const Page: React.FC<DynamicPageProps> = async ({
   | null
   | undefined
 > => {
-  const post = await new Post().getBySlug(slug)
+  const post: BlogPost | null | undefined = await new Post().getBySlug(slug)
 
   if (!post) {
     notFound()

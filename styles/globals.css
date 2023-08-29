@@ -51,6 +51,10 @@
     @apply text-accent-900 dark:text-accent-300;
   }
 
+  .placeholder-tertiary {
+    @apply text-gray-700 dark:text-gray-200;
+  }
+
   .min-h-screen_ {
     min-height: calc(100vh - 4.5rem);
   }
@@ -62,11 +66,11 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
-  @apply font-main antialiased selection:bg-accent-300/90 selection:text-black/90;
+
+  @apply appearance-none scroll-smooth font-main antialiased outline-none selection:bg-accent-300/90 selection:text-black/90;
 }
 
 html {
-  scroll-behavior: smooth;
   height: 100%;
 }
 

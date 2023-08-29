@@ -4,9 +4,9 @@ import data from '@/data'
 import { cn } from '@/lib/cn'
 import Link from 'next/link'
 
-type LogoProps = {} & ComponentProps<'h1'>
+type LogoProps = {} & Omit<ComponentProps<'h1'>, 'children'>
 
-const Logo: React.ForwardRefExoticComponent<LogoProps & React.RefAttributes<HTMLHeadingElement>> = React.forwardRef(
+const Logo: React.ForwardRefExoticComponent<LogoProps & React.RefAttributes<HTMLHeadingElement>> = React.forwardRef<HTMLHeadingElement, LogoProps>(
   ({ className, ...props }, ref): React.ReactNode => {
     const label = `${data.title} logo`
 

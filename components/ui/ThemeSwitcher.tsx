@@ -4,8 +4,8 @@ import React, { Fragment, useEffect, useState } from 'react'
 
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
-import { Listbox, Transition } from '@headlessui/react'
 import { cn } from '@/lib/cn'
+import { Listbox, Transition } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 
 import { Moon, Sun, Laptop, type LucideIcon } from 'lucide-react'

@@ -11,6 +11,7 @@ type RawPost = {
 type PostBody = string
 
 type BlogPost = Omit<RawPost, 'tags'> & {
+  id: string
   readingTime: string
   body: PostBody
   tags: string[]

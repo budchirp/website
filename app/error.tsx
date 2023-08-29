@@ -10,7 +10,7 @@ import { genMetadata } from '@/lib/gen-metadata'
 import type { ErrorProps } from '@/types/error'
 import type { Metadata } from 'next'
 
-const metadata: Metadata = genMetadata({ title: 'Error' })
+const metadata: Metadata = genMetadata({ title: 'Error!' })
 
 const Error: React.FC<ErrorProps> = ({ reset }: ErrorProps): React.ReactNode => {
   return (
