@@ -18,7 +18,7 @@ import {
   SiCplusplus
 } from 'react-icons/si'
 import { FaCss3, FaLinux, FaReact, FaVuejs } from 'react-icons/fa'
-import { Hexagon, Mail, Send, Terminal } from 'lucide-react'
+import { Hexagon, Instagram, Mail, Send, Terminal } from 'lucide-react'
 
 const data = {
   name: 'budchirp',
@@ -143,9 +143,9 @@ const data = {
       link: 'https://discordapp.com/users/1118636505737478205',
       icon: <SiDiscord />
     },
-    Matrix: {
-      link: 'https://matrix.to/#/@budchirp:matrix.org',
-      icon: <SiMatrix />
+    Instagram: {
+      link: 'https://instagram.com/budchirp',
+      icon: <Instagram />
     }
   }
 }
