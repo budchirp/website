@@ -5,7 +5,6 @@ import {
   SiJavascript,
   SiPhp,
   SiLua,
-  SiRust,
   SiNeovim,
   SiTailwindcss,
   SiExpress,
@@ -13,9 +12,10 @@ import {
   SiGnubash,
   SiSvelte,
   SiNestjs,
-  SiMatrix,
   SiC,
-  SiCplusplus
+  SiCplusplus,
+  SiGo,
+  SiAstro
 } from 'react-icons/si'
 import { FaCss3, FaLinux, FaReact, FaVuejs } from 'react-icons/fa'
 import { Hexagon, Instagram, Mail, Send, Terminal } from 'lucide-react'
@@ -50,8 +50,8 @@ const data = {
         icon: <SiLua />
       },
       {
-        name: 'Rust',
-        icon: <SiRust />
+        name: 'Go',
+        icon: <SiGo />
       },
       {
         name: 'C',
@@ -92,6 +92,10 @@ const data = {
       {
         name: 'Svelte',
         icon: <SiSvelte />
+      },
+      {
+        name: 'Astro',
+        icon: <SiAstro />
       },
       {
         name: 'CSS',
