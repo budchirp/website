@@ -1,7 +1,7 @@
 import React, { type ComponentProps } from 'react'
 
-import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/cn'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { Loader2 } from 'lucide-react'
 
 const buttonVariants = cva(
@@ -13,9 +13,9 @@ const buttonVariants = cva(
         round: 'h-10 w-10 rounded-full p-2 text-2xl'
       },
       color: {
-        primary: 'bg-accent-600 text-white hover:text-gray-200 disabled:text-gray-200 hover:bg-primary-700 dark:hover:bg-primary-400',
+        primary: 'bg-accent-600 text-50 hover:text-gray-200 disabled:text-gray-200 hover:bg-primary-700 dark:hover:bg-primary-400',
         secondary:
-          'bg-secondary border border-primary hover:border-tertiary disabled:text-tertiary text-primary hover:text-secondary hover:bg-tertiary'
+          'bg-secondary border border-primary hover:border-tertiary disabled:text-secondary text-primary hover:text-secondary hover:bg-tertiary'
       }
     },
     defaultVariants: {
