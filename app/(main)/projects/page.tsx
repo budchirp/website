@@ -34,6 +34,7 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
               rel="noreferrer"
               target="_blank"
               className="text-primary group-hover:text-secondary flex w-full items-center break-all text-2xl font-bold transition duration-300"
+              aria-label={`Go to ${repo.html_url}`}
             >
               {repo.name}
             </Link>
@@ -48,7 +49,7 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
                   </span>
                 )}
                 {repo.homepage && (
-                  <Link href={repo.homepage} className="w-min" target="_blank" rel="noreferrer">
+                  <Link href={repo.homepage} className="w-min" target="_blank" rel="noreferrer" aria-label={`Go to ${repo.html_url}`}>
                     <Button>Preview</Button>
                   </Link>
                 )}

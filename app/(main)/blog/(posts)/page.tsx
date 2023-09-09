@@ -1,29 +1,21 @@
 import React from 'react'
 
 import { Button } from '@/components/Button'
+import { Input } from '@/components/Input'
 import { Box } from '@/components/Box'
 import { genMetadata } from '@/lib/gen-metadata'
 import { Post } from '@/lib/post'
+import { cn } from '@/lib/cn'
 import { Calendar, Search } from 'lucide-react'
+import MiniSearch from 'minisearch'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 
 import type { DynamicPageProps } from '@/types/page'
 import type { BlogPost } from '@/types/post'
 import type { Metadata } from 'next'
-import { cn } from '@/lib/cn'
-import { Input } from '@/components/Input'
-import MiniSearch from 'minisearch'
 
 const metadata: Metadata = genMetadata({ title: 'Blog' })
-
-const search = async (formData: FormData): Promise<void> => {
-  'use server'
-
-  const searchText = formData.get('search')
-
-  redirect(`/blog?search=${searchText}`)
-}
 
 const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPageProps): Promise<JSX.Element> => {
   const post: Post = new Post()
@@ -31,7 +23,7 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
 
   let posts: BlogPost[] = []
 
-  const searchText: string | null | undefined = searchParams.search
+  const searchText: string | null | undefined = decodeURIComponent(searchParams.search || '')
 
   if (searchText) {
     const miniSearch = new MiniSearch({ fields: ['title', 'description', 'tags'], storeFields: Object.keys(allPosts[0]) })
@@ -56,45 +48,52 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
   const prevDisabled: boolean = page === 0
   const nextDisabled: boolean = page === totalPages
 
+  const search = async (formData: FormData): Promise<void> => {
+    'use server'
+
+    const searchText: string = (formData.get('search') as string) || ''
+
+    redirect(`/blog?search=${encodeURIComponent(searchText)}`)
+  }
+
   return (
     <div className="grid gap-4">
       <form className="grid gap-2" action={search}>
-        <Input defaultValue={searchText || ''} id="search" type="search" name="search" icon={<Search />} placeholder="Search posts..." />
-
-        <Button className="w-min" type="submit">
-          Search
-        </Button>
+        <Input defaultValue={searchText || ''} id="search" type="text" name="search" icon={<Search />} placeholder="Search posts..." />
+        <input type="submit" hidden />
       </form>
 
       <div className="mansonry">
         {posts.map(
           (post: BlogPost): React.ReactNode => (
-            <Box key={post.slug} className="relative h-min overflow-hidden" padding="none">
-              <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
-                <Link href={'/blog/' + post.slug}>
-                  <img className="w-full object-cover transition duration-300 ease-out hover:scale-125" alt={post.title} src={post.imageUrl} />
-                </Link>
-              </div>
-
-              <div className="grid w-full gap-2 p-4">
-                <div>
-                  <div className="flex items-center">
-                    <Calendar className="mr-1 h-4 w-4 text-xs" />
-                    <p className="text-secondary text-sm font-medium">{post.formattedDate}</p>
-                  </div>
-
-                  <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                    <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">{post.title}</h1>
+            <article key={post.slug}>
+              <Box className="relative mb-4 h-min overflow-hidden last:mb-0" padding="none">
+                <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
+                  <Link aria-label="Go to the blog post" href={'/blog/' + post.slug}>
+                    <img className="w-full object-cover transition duration-300 ease-out hover:scale-125" alt={post.title} src={post.imageUrl} />
                   </Link>
-
-                  <p className="text-secondary">{post.description}</p>
                 </div>
 
-                <Link href={'/blog/' + post.slug}>
-                  <Button className="w-full">Read more</Button>
-                </Link>
-              </div>
-            </Box>
+                <div className="grid w-full gap-2 p-4">
+                  <div>
+                    <div className="flex items-center">
+                      <Calendar className="mr-1 h-4 w-4 text-xs" />
+                      <p className="text-secondary text-sm font-medium">{post.formattedDate}</p>
+                    </div>
+
+                    <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
+                      <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">{post.title}</h1>
+                    </Link>
+
+                    <p className="text-secondary">{post.description}</p>
+                  </div>
+
+                  <Link aria-label="Go to the blog post" href={'/blog/' + post.slug}>
+                    <Button className="w-full">Read more</Button>
+                  </Link>
+                </div>
+              </Box>
+            </article>
           )
         )}
       </div>

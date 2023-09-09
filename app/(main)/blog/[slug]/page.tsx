@@ -17,7 +17,11 @@ import type { BlogPost } from '@/types/post'
 import type { Metadata } from 'next'
 
 const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise<Metadata> => {
-  const post: BlogPost = (await new Post().getBySlug(slug)) as BlogPost
+  const post: BlogPost | null | undefined = await new Post().getBySlug(slug)
+
+  if (!post) {
+    notFound()
+  }
 
   return genMetadata({
     title: `${post.title} - Blog`,

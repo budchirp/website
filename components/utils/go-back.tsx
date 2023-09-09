@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import { Button } from '../Button'
+
+import { Button } from '@/components/Button'
 import { usePathname, useRouter } from 'next/navigation'
-import Link from 'next/link'
 
 type GoBackProps = {
   removeSearchParams?: boolean
@@ -13,14 +13,16 @@ const GoBack: React.FC<GoBackProps> = ({ removeSearchParams }: GoBackProps): Rea
   const router = useRouter()
   const pathname = usePathname()
 
-  const label = 'Click to go to the previous page'
+  const redirect = (): void => {
+    if (removeSearchParams) {
+      router.push(pathname)
+    } else {
+      router.back()
+    }
+  }
 
-  return removeSearchParams ? (
-    <Link aria-label={label} href={pathname}>
-      <Button aria-label={label}>Go back</Button>
-    </Link>
-  ) : (
-    <Button aria-label={label} onClick={() => router.back()}>
+  return (
+    <Button aria-label="Click to go to the previous page" onClick={redirect}>
       Go back
     </Button>
   )
