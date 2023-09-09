@@ -13,7 +13,7 @@ const Loading: React.FC = (): React.ReactNode => {
     <div className="mansonry">
       {[...Array(10)].map((_: any, index: number): React.ReactNode => {
         return (
-          <Box key={index} padding="none">
+          <Box key={index} padding="none" className="mb-4 last:mb-0">
             <div className="bg-tertiary h-48 w-full animate-pulse rounded-t-2xl" />
 
             <div className="grid gap-2 p-4">
