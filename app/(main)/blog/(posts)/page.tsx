@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { Button } from '@/components/Button'
 import { Box } from '@/components/Box'
 import { genMetadata } from '@/lib/gen-metadata'
@@ -70,34 +69,32 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
       <div className="mansonry">
         {posts.map(
           (post: BlogPost): React.ReactNode => (
-            <AnimateOnScroll key={post.slug}>
-              <Box className="relative h-min overflow-hidden" padding="none">
-                <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
-                  <Link href={'/blog/' + post.slug}>
-                    <img className="w-full object-cover transition duration-300 ease-out hover:scale-125" alt={post.title} src={post.imageUrl} />
-                  </Link>
-                </div>
+            <Box key={post.slug} className="relative h-min overflow-hidden" padding="none">
+              <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
+                <Link href={'/blog/' + post.slug}>
+                  <img className="w-full object-cover transition duration-300 ease-out hover:scale-125" alt={post.title} src={post.imageUrl} />
+                </Link>
+              </div>
 
-                <div className="grid w-full gap-2 p-4">
-                  <div>
-                    <div className="flex items-center">
-                      <Calendar className="mr-1 h-4 w-4 text-xs" />
-                      <p className="text-secondary text-sm font-medium">{post.formattedDate}</p>
-                    </div>
-
-                    <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                      <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">{post.title}</h1>
-                    </Link>
-
-                    <p className="text-secondary">{post.description}</p>
+              <div className="grid w-full gap-2 p-4">
+                <div>
+                  <div className="flex items-center">
+                    <Calendar className="mr-1 h-4 w-4 text-xs" />
+                    <p className="text-secondary text-sm font-medium">{post.formattedDate}</p>
                   </div>
 
-                  <Link href={'/blog/' + post.slug}>
-                    <Button className="w-full">Read more</Button>
+                  <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
+                    <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">{post.title}</h1>
                   </Link>
+
+                  <p className="text-secondary">{post.description}</p>
                 </div>
-              </Box>
-            </AnimateOnScroll>
+
+                <Link href={'/blog/' + post.slug}>
+                  <Button className="w-full">Read more</Button>
+                </Link>
+              </div>
+            </Box>
           )
         )}
       </div>

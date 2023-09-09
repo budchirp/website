@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { Box } from '@/components/Box'
 import { genMetadata } from '@/lib/gen-metadata'
 import data from '@/data'
@@ -12,22 +11,20 @@ const metadata: Metadata = genMetadata({ title: 'About me' })
 const Page: React.FC = (): React.ReactNode => {
   return (
     <div className="mt-16 grid gap-4">
-      <AnimateOnScroll>
+      <div>
         <p className="text-accent-primary text-3xl font-bold">{data.title}</p>
         <p className="text-lg">
           <span className="text-secondary line-through">Almost</span> full-stack developer
         </p>
-      </AnimateOnScroll>
+      </div>
 
       <div className="grid gap-1">
-        <AnimateOnScroll>
-          <p className="text-secondary text-xl font-medium">Technologies</p>
-        </AnimateOnScroll>
+        <p className="text-secondary text-xl font-medium">Technologies</p>
 
         <div className="grid gap-2">
           {Object.keys(data.skills).map(
             (key: string, index: number): React.ReactNode => (
-              <AnimateOnScroll key={index} className="grid gap-2">
+              <div key={index} className="grid gap-2">
                 <span className="text-tertiary text-sm">{key}</span>
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                   {/* @ts-ignore */}
@@ -42,23 +39,21 @@ const Page: React.FC = (): React.ReactNode => {
                     )
                   })}
                 </div>
-              </AnimateOnScroll>
+              </div>
             )
           )}
         </div>
       </div>
 
       <div data-nosnippet className="grid gap-1">
-        <AnimateOnScroll>
-          <p className="text-secondary text-xl font-medium">Programming journey</p>
-        </AnimateOnScroll>
+        <p className="text-secondary text-xl font-medium">My programming journey</p>
 
         <div className="grid gap-2">
           {Object.keys(data.journey)
             .reverse()
             .map(
               (key: string, index: number): React.ReactNode => (
-                <AnimateOnScroll key={index} className="grid grid-cols-2 gap-2">
+                <div key={index} className="grid grid-cols-2 gap-2">
                   <span className="text-accent-primary text-2xl font-bold">{key}</span>
                   <div>
                     {/* @ts-ignore */}
@@ -71,7 +66,7 @@ const Page: React.FC = (): React.ReactNode => {
                       )
                     )}
                   </div>
-                </AnimateOnScroll>
+                </div>
               )
             )}
         </div>

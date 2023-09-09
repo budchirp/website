@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { Button } from '@/components/Button'
 import { Box } from '@/components/Box'
 import { genMetadata } from '@/lib/gen-metadata'
