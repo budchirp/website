@@ -1,7 +1,7 @@
 import React from 'react'
 
+import { GoBack } from '@/components/utils/go-back'
 import { VerticalPage } from '@/components/VerticalPage'
-import { Container } from '@/components/Container'
 import { genMetadata } from '@/lib/gen-metadata'
 
 import type { ErrorProps } from '@/types/error'
@@ -11,9 +11,9 @@ const metadata: Metadata = genMetadata({ title: 'No project available' })
 
 const NotFound: React.FC<ErrorProps> = (): React.ReactNode => {
   return (
-    <Container>
-      <VerticalPage items={["There's", 'nothing', 'to', 'see']} title={'👻'} />
-    </Container>
+    <VerticalPage items={["There's", 'nothing', 'to', 'see']} title={'👻'}>
+      <GoBack />
+    </VerticalPage>
   )
 }
 
