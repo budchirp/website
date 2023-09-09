@@ -12,12 +12,12 @@ const PageHeader: React.ForwardRefExoticComponent<PageHeaderProps & React.RefAtt
   PageHeaderProps
 >(({ className, children, topPart, bottomPart, ...props }: PageHeaderProps, ref): React.ReactNode => {
   return (
-    <div {...props} ref={ref} className={cn('mb-4 mt-8 grid w-full gap-1 border-b-[5px] border-gray-50 pb-2 dark:border-gray-800', className)}>
-      {topPart && <div className="w-full">{topPart}</div>}
+    <div {...props} ref={ref} className={cn('border-primary mb-4 mt-8 grid w-full gap-1 border-b-4 pb-2', className)}>
+      {topPart}
 
       <h2 className="break-all text-3xl font-bold">{children}</h2>
 
-      {bottomPart && <div className="w-full">{bottomPart}</div>}
+      {bottomPart}
     </div>
   )
 })

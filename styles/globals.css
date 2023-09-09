@@ -16,11 +16,11 @@
   }
 
   .border-primary {
-    @apply border-gray-200 dark:border-gray-690;
+    @apply border-gray-100 dark:border-gray-690;
   }
 
   .border-secondary {
-    @apply border-gray-100 dark:border-gray-600;
+    @apply border-gray-200/75 dark:border-gray-690/75;
   }
 
   .text-primary {
@@ -32,7 +32,7 @@
   }
 
   .text-tertiary {
-    @apply text-gray-600 dark:text-gray-200;
+    @apply text-gray-600 dark:text-gray-300;
   }
 
   .text-primary-reverse {
@@ -61,6 +61,25 @@
 
   .h-screen_ {
     height: calc(100vh - 4rem);
+  }
+
+  .masonry {
+    @apply h-full w-full;
+    column-gap: theme('gap.4');
+    columns: 1 auto;
+    break-inside: avoid;
+
+    div {
+      break-inside: avoid;
+    }
+
+    @screen md {
+      columns: 2 auto;
+    }
+
+    @screen xl {
+      columns: 3 auto;
+    }
   }
 }
 

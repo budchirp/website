@@ -10,7 +10,7 @@ const metadata: Metadata = genMetadata({ title: 'Loading projects...' })
 
 const Loading: React.FC = (): React.ReactNode => {
   return (
-    <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div className="mansonry">
       {[...Array(10)].map((_: any, index: number): React.ReactNode => {
         return (
           <AnimateOnScroll key={index}>

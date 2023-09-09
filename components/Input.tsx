@@ -18,7 +18,7 @@ const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HT
             {...props}
             ref={ref}
             className={cn(
-              'bg-primary text-primary placeholder-tertiary border-primary focus:border-secondary hover:border-secondary flex h-full w-full items-center rounded-3xl border py-2 pl-11 pr-4 transition duration-300',
+              'bg-primary text-primary placeholder-tertiary border-primary focus:border-secondary flex h-full w-full items-center rounded-3xl border py-2 pl-11 pr-4 transition duration-300',
               className
             )}
           />

@@ -9,6 +9,7 @@ import { Listbox, Transition } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 
 import { Moon, Sun, Laptop, type LucideIcon } from 'lucide-react'
+import { Box } from '../Box'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -50,8 +51,8 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
         leaveTo="opacity-0 scale-90"
       >
         <Listbox.Options className={cn('fixed inset-x-0 top-20 z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]')}>
-          <Container className="relative flex items-center justify-center">
-            <div className="bg-primary border-primary absolute right-0 top-0 w-36 rounded-2xl border">
+          <Container className="relative flex items-center justify-end">
+            <Box variant="primary" padding="none" className="top-0 w-36 overflow-hidden">
               {(Object.keys(themes) as Theme[]).map((theme: Theme): React.ReactNode => {
                 const [label, Icon] = themes[theme]
 
@@ -60,7 +61,7 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                     key={theme}
                     className={({ selected }) =>
                       cn(
-                        'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 transition duration-300 first:rounded-t-2xl last:rounded-b-2xl',
+                        'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 transition duration-300 last:border-none',
                         selected ? 'bg-secondary' : 'bg-primary hover:bg-secondary'
                       )
                     }
@@ -80,7 +81,7 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
                   </Listbox.Option>
                 )
               })}
-            </div>
+            </Box>
           </Container>
         </Listbox.Options>
       </Transition>

@@ -67,18 +67,14 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
         </Button>
       </form>
 
-      <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mansonry">
         {posts.map(
           (post: BlogPost): React.ReactNode => (
             <AnimateOnScroll key={post.slug}>
-              <Box className="h-min" padding="none">
+              <Box className="relative h-min overflow-hidden" padding="none">
                 <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
                   <Link href={'/blog/' + post.slug}>
-                    <img
-                      className="w-full rounded-t-2xl object-cover transition duration-300 ease-out hover:scale-110"
-                      alt={post.title}
-                      src={post.imageUrl}
-                    />
+                    <img className="w-full object-cover transition duration-300 ease-out hover:scale-125" alt={post.title} src={post.imageUrl} />
                   </Link>
                 </div>
 

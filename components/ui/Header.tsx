@@ -106,9 +106,9 @@ const Header: React.FC = () => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >
-            <Dialog.Panel className="fixed inset-x-0 top-20 z-[100] mx-auto flex w-screen origin-[90%_0%] justify-center">
-              <Container className="relative flex items-center justify-center">
-                <Box padding="none" variant="primary" className="absolute left-0 top-0 w-full overflow-hidden sm:max-w-screen-xs">
+            <Dialog.Panel className="fixed md:hidden inset-x-0 top-20 z-[100] mx-auto flex h-min w-screen origin-[90%_0%] justify-center">
+              <Container className="relative flex h-min items-center justify-center">
+                <Box variant="primary" padding="none" className="top-0 w-full overflow-hidden sm:max-w-screen-xs">
                   <div className="border-primary flex h-16 items-center border-b px-5">
                     <Dialog.Title as="h2" className="text-2xl font-bold leading-none">
                       Links

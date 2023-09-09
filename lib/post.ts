@@ -42,7 +42,7 @@ class Post {
         })
     )
 
-    return posts || []
+    return posts.sort((a: BlogPost, b: BlogPost): number => a.date.getTime() - b.date.getTime()) || []
   }
 
   async paginate(posts: BlogPost[], page: number = 0, limit: number = 10): Promise<{ posts: BlogPost[] | []; page: number; totalPages: number }> {

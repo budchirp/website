@@ -13,9 +13,9 @@ const buttonVariants = cva(
         round: 'h-10 w-10 rounded-full p-2 text-2xl'
       },
       color: {
-        primary: 'bg-accent-600 text-50 hover:text-gray-200 disabled:text-gray-200 hover:bg-primary-700 dark:hover:bg-primary-400',
+        primary: 'bg-accent-600 text-gray-50 hover:text-gray-100 disabled:text-gray-200 hover:bg-accent-700',
         secondary:
-          'bg-secondary border border-primary hover:border-tertiary disabled:text-secondary text-primary hover:text-secondary hover:bg-tertiary'
+          'bg-primary border border-primary hover:border-secondary disabled:text-secondary text-primary hover:text-secondary hover:bg-secondary'
       }
     },
     defaultVariants: {
