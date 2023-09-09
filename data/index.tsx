@@ -128,10 +128,10 @@ const data = {
     ]
   },
   journey: {
-    2023: ['Started learning Rust & C', 'Started learning Svelte'],
-    2022: ['Learned lua'],
-    2021: ['Learned Typescript', 'Learned basic React & Vue', 'Learned Tailwindcss & Sass'],
-    2020: ['Learned Javascript', 'PHP', 'Learned Python'],
+    2023: ['Started learning Rust, C and Go', 'Started learning Svelte and Astro'],
+    2022: ['Learned Lua'],
+    2021: ['Learned Typescript', 'Learned basic React and Vue', 'Learned Tailwindcss'],
+    2020: ['Learned Javascript, PHP', 'Learned Python'],
     2019: ['Learned HTML, CSS']
   },
   contact: {
