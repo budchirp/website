@@ -49,39 +49,37 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-90"
       >
-        <Listbox.Options className={cn('fixed inset-x-0 top-[5.5rem] z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]')}>
-          <Container className="flex items-center justify-center">
-            <div className="justify-right items-right relative flex w-full">
-              <div className="bg-primary border-primary absolute right-2 top-0 w-36 rounded-2xl border">
-                {(Object.keys(themes) as Theme[]).map((theme: Theme): React.ReactNode => {
-                  const [label, Icon] = themes[theme]
+        <Listbox.Options className={cn('fixed inset-x-0 top-20 z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]')}>
+          <Container className="relative flex items-center justify-center">
+            <div className="bg-primary border-primary absolute right-0 top-0 w-36 rounded-2xl border">
+              {(Object.keys(themes) as Theme[]).map((theme: Theme): React.ReactNode => {
+                const [label, Icon] = themes[theme]
 
-                  return (
-                    <Listbox.Option
-                      key={theme}
-                      className={({ selected }) =>
-                        cn(
-                          'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 transition duration-300 first:rounded-t-2xl last:rounded-b-2xl',
-                          selected ? 'bg-secondary' : 'bg-primary hover:bg-secondary'
-                        )
-                      }
-                      value={theme}
-                    >
-                      {({ selected }) => (
-                        <p
-                          className={cn(
-                            'flex h-full w-full items-center gap-2 font-medium transition duration-300',
-                            selected ? 'text-accent-primary' : 'text-primary hover:text-tertiary'
-                          )}
-                        >
-                          <Icon />
-                          <span>{label}</span>
-                        </p>
-                      )}
-                    </Listbox.Option>
-                  )
-                })}
-              </div>
+                return (
+                  <Listbox.Option
+                    key={theme}
+                    className={({ selected }) =>
+                      cn(
+                        'border-primary flex h-min w-full cursor-pointer items-center border-b px-4 py-2 transition duration-300 first:rounded-t-2xl last:rounded-b-2xl',
+                        selected ? 'bg-secondary' : 'bg-primary hover:bg-secondary'
+                      )
+                    }
+                    value={theme}
+                  >
+                    {({ selected }) => (
+                      <p
+                        className={cn(
+                          'flex h-full w-full items-center gap-2 font-medium transition duration-300',
+                          selected ? 'text-accent-primary' : 'text-primary hover:text-secondary'
+                        )}
+                      >
+                        <Icon />
+                        <span>{label}</span>
+                      </p>
+                    )}
+                  </Listbox.Option>
+                )
+              })}
             </div>
           </Container>
         </Listbox.Options>

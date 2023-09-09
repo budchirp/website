@@ -26,18 +26,7 @@ const search = async (formData: FormData): Promise<void> => {
   redirect(`/blog?search=${searchText}`)
 }
 
-const Page: React.FC<DynamicPageProps> = async (
-  { searchParams }: DynamicPageProps
-): Promise<
-  | string
-  | number
-  | boolean
-  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-  | Iterable<React.ReactNode>
-  | React.ReactPortal
-  | null
-  | undefined
-> => {
+const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPageProps): Promise<JSX.Element> => {
   const post: Post = new Post()
   const allPosts: BlogPost[] = await post.getAll()
 
@@ -97,11 +86,11 @@ const Page: React.FC<DynamicPageProps> = async (
                   <div>
                     <div className="flex items-center">
                       <Calendar className="mr-1 h-4 w-4 text-xs" />
-                      <p className="text-tertiary text-sm font-medium">{post.date}</p>
+                      <p className="text-secondary text-sm font-medium">{post.formattedDate}</p>
                     </div>
 
                     <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                      <h1 className="hover:text-tertiary break-all text-xl font-bold transition duration-300">{post.title}</h1>
+                      <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">{post.title}</h1>
                     </Link>
 
                     <p className="text-secondary">{post.description}</p>
@@ -119,7 +108,7 @@ const Page: React.FC<DynamicPageProps> = async (
 
       <div className="flex h-min w-full items-center justify-between gap-1">
         <Link
-          className={cn('text-primary hover:text-secondary text-lg font-bold transition duration-300', prevDisabled ? 'text-tertiary' : '')}
+          className={cn('text-lg font-bold transition duration-300', nextDisabled ? 'text-tertiary' : 'text-primary hover:text-secondary')}
           aria-disabled={prevDisabled}
           aria-label="Previous page"
           href={`/blog?${searchText ? `search=${searchText}&` : ''}page=${!prevDisabled ? page - 1 : page}`}
@@ -132,7 +121,7 @@ const Page: React.FC<DynamicPageProps> = async (
         </span>
 
         <Link
-          className={cn('text-primary hover:text-secondary text-lg font-bold transition duration-300', nextDisabled ? 'text-tertiary' : '')}
+          className={cn('text-lg font-bold transition duration-300', nextDisabled ? 'text-tertiary' : 'text-primary hover:text-secondary')}
           aria-disabled={nextDisabled}
           aria-label="Next page"
           href={`/blog?${searchText ? `search=${searchText}&` : ''}page=${!nextDisabled ? page + 1 : page}`}

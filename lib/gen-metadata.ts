@@ -9,20 +9,23 @@ type GenMetadataProps = {
 }
 
 const genMetadata = ({ title, description, other }: GenMetadataProps): Metadata => {
-  const { openGraph, ..._other } = other ?? { openGraph: {} }
+  const { openGraph, twitter, ...rest } = other ?? { openGraph: {} }
 
   return {
     title,
     description: description || data.description,
-
+    twitter: {
+      title,
+      description: description || data.description,
+      ...twitter
+    },
     openGraph: {
       title,
       description: description || data.description,
       ...openGraph
     },
-
-    ..._other
-  }
+    ...rest
+  } satisfies Metadata
 }
 
 export { genMetadata }

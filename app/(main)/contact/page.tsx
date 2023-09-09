@@ -19,12 +19,12 @@ const Page: React.FC = (): React.ReactNode => {
 
         return (
           <AnimateOnScroll key={index}>
-            <Box className="hover:bg-tertiary flex h-16 items-center gap-3 duration-300">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500 bg-opacity-50 p-1 text-xl">{contact.icon}</span>
+            <Box className="hover:bg-tertiary group flex h-16 items-center gap-3 duration-300">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-700 p-1 text-xl text-gray-50">{contact.icon}</span>
 
               <Link
                 href={contact.link || '/contact'}
-                className="text-primary hover:text-tertiary flex-1 text-xl font-bold transition duration-300"
+                className="text-primary group-hover:text-secondary flex-1 text-xl font-bold transition duration-300"
                 rel="noreferrer"
                 target="_blank"
               >

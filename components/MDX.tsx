@@ -7,8 +7,8 @@ Code.lineNumbers = true
 
 Code.theme = 'github-dark'
 
-Code.className = '!bg-gray-800 !font-mono'
-Code.codeClassName = '!bg-gray-800 !font-mono'
+Code.className = '!bg-gray-800'
+Code.codeClassName = '!bg-gray-800'
 
 const components = {
   a: (props: any): React.ReactNode => <Link href={props.href}>{props.children}</Link>,

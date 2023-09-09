@@ -10,11 +10,13 @@ type RawPost = {
 
 type PostBody = string
 
-type BlogPost = Omit<RawPost, 'tags'> & {
+type BlogPost = Omit<RawPost, 'tags' | 'date'> & {
   id: string
   readingTime: string
   body: PostBody
   tags: string[]
+  date: Date
+  formattedDate: string
 }
 
 export type { RawPost, PostBody, BlogPost }

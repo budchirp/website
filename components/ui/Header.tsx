@@ -49,8 +49,8 @@ const Header: React.FC = () => {
     <>
       <header
         className={cn(
-          'bg-primary border-primary fixed top-0 z-[125] flex h-18 w-full items-center justify-center border-b bg-blend-overlay backdrop-blur transition duration-300',
-          isMobileMenuOpened ? 'bg-opacity-100 ease-out' : '!bg-opacity-25 ease-in'
+          'bg-primary border-primary sticky top-0 z-[125] flex h-16 w-full items-center justify-center border-b bg-blend-overlay backdrop-blur transition duration-300',
+          isMobileMenuOpened ? 'bg-opacity-100 ease-in' : '!bg-opacity-25 ease-out'
         )}
       >
         <Container className="flex h-full items-center justify-between gap-2">
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
               setIsMobileMenuOpened(false)
             }}
             aria-hidden="true"
-            className="fixed inset-0 z-[75] h-screen w-screen bg-gray-100/25 bg-blend-overlay backdrop-blur dark:bg-black/25 md:hidden"
+            className="fixed inset-0 z-[75] h-screen w-screen bg-gray-100/50 bg-blend-overlay backdrop-blur dark:bg-black/25 md:hidden"
           />
 
           <Transition.Child
@@ -106,32 +106,28 @@ const Header: React.FC = () => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >
-            <Dialog.Panel className="fixed inset-x-0 top-[5.5rem] z-[100] mx-auto flex w-screen origin-[90%_0%] justify-center">
-              <Container className="flex items-center justify-center">
-                <div className="relative flex w-full items-center justify-center">
-                  <Box padding="none" variant="primary" className="w-full overflow-hidden sm:max-w-screen-xs">
-                    <div className="border-primary flex h-16 items-center border-b px-6">
-                      <Dialog.Title as="h2" className="flex h-full items-center text-2xl font-bold leading-none">
-                        Links
-                      </Dialog.Title>
-                    </div>
+            <Dialog.Panel className="fixed inset-x-0 top-20 z-[100] mx-auto flex w-screen origin-[90%_0%] justify-center">
+              <Container className="relative flex items-center justify-center">
+                <Box padding="none" variant="primary" className="absolute left-0 top-0 w-full overflow-hidden sm:max-w-screen-xs">
+                  <div className="border-primary flex h-16 items-center border-b px-5">
+                    <Dialog.Title as="h2" className="text-2xl font-bold leading-none">
+                      Links
+                    </Dialog.Title>
+                  </div>
 
-                    <div className="my-2 grid gap-1 px-6">
-                      {links.map(
-                        (link: LinkProps, index: number): React.ReactNode => (
-                          <HeaderLink pathname={pathname} label={link.label} url={link.url} key={index} />
-                        )
-                      )}
-                    </div>
-                  </Box>
-                </div>
+                  <div className="grid gap-1 px-5 py-3">
+                    {links.map(
+                      (link: LinkProps, index: number): React.ReactNode => (
+                        <HeaderLink pathname={pathname} label={link.label} url={link.url} key={index} />
+                      )
+                    )}
+                  </div>
+                </Box>
               </Container>
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
       </Transition>
-
-      <div aria-hidden="true" className="h-18" />
     </>
   )
 }

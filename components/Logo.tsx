@@ -1,7 +1,7 @@
-import React, { ComponentProps } from 'react'
+import React, { type ComponentProps } from 'react'
 
-import data from '@/data'
 import { cn } from '@/lib/cn'
+import data from '@/data'
 import Link from 'next/link'
 
 type LogoProps = {} & Omit<ComponentProps<'h1'>, 'children'>

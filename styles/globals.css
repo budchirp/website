@@ -20,7 +20,7 @@
   }
 
   .border-secondary {
-    @apply border-gray-200 dark:border-gray-690;
+    @apply border-gray-100 dark:border-gray-600;
   }
 
   .text-primary {
@@ -28,11 +28,11 @@
   }
 
   .text-secondary {
-    @apply text-gray-800 dark:text-gray-100;
+    @apply text-gray-700 dark:text-gray-100;
   }
 
   .text-tertiary {
-    @apply text-gray-700 dark:text-gray-200;
+    @apply text-gray-600 dark:text-gray-200;
   }
 
   .text-primary-reverse {
@@ -40,7 +40,7 @@
   }
 
   .text-secondary-reverse {
-    @apply text-gray-100 dark:text-gray-800;
+    @apply text-gray-100 dark:text-gray-700;
   }
 
   .text-accent-primary {
@@ -52,15 +52,15 @@
   }
 
   .placeholder-tertiary {
-    @apply text-gray-700 dark:text-gray-200;
+    @apply placeholder:font-medium placeholder:text-gray-600 dark:placeholder:text-gray-200;
   }
 
   .min-h-screen_ {
-    min-height: calc(100vh - 4.5rem);
+    min-height: calc(100vh - 4rem);
   }
 
   .h-screen_ {
-    height: calc(100vh - 4.5rem);
+    height: calc(100vh - 4rem);
   }
 }
 
@@ -70,18 +70,14 @@
   @apply appearance-none scroll-smooth font-main antialiased outline-none selection:bg-accent-300/90 selection:text-black/90;
 }
 
-html {
-  height: 100%;
-}
-
-hr {
-  border: none;
+body {
+  @apply text-primary bg-primary scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-300 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-900;
 }
 
 [data-bright-theme='github-dark'] {
-  @apply !rounded-xl !bg-gray-800 !px-0 !py-1 !font-mono;
+  @apply !rounded-xl !bg-gray-800 !px-0 !py-1;
 }
 
 pre {
-  @apply !rounded-2xl !bg-gray-800 !p-0 !font-mono;
+  @apply !rounded-2xl !bg-gray-800 !p-0;
 }

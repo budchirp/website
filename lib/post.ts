@@ -20,11 +20,22 @@ class Post {
 
           const { data: metaData, content }: { data: RawPost; content: PostBody } = matter(fileContent) as any
 
+          let formattedDate: string
+
+          const date: Date = new Date(metaData.date)
+          const yyyy: number = date.getFullYear()
+          const mm: number = date.getMonth()
+          const dd: number = date.getDay()
+
+          formattedDate = `${dd < 10 ? `0${dd}` : dd}/${mm < 10 ? `0${mm}` : mm}/${yyyy}`
+
           let newMetaData: Omit<BlogPost, 'body'> = {
             ...metaData,
             id: metaData.slug,
             tags: metaData.tags.split(', '),
-            readingTime: readingTime(content).text
+            readingTime: readingTime(content).text,
+            date,
+            formattedDate
           }
 
           return { ...newMetaData, body: content } as BlogPost
@@ -44,7 +55,7 @@ class Post {
     return { posts: posts.slice(limit * page, limit * page + limit), page, totalPages }
   }
 
-  async getBySlug(slug: string): Promise<BlogPost | null | undefined> {
+  async getBySlug(slug: string): Promise<BlogPost | null> {
     const posts = await this.getAll()
 
     return (posts.find((post: BlogPost) => post.slug == slug) as BlogPost) || null
