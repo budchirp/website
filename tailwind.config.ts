@@ -1,8 +1,8 @@
 import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 import type { Config } from 'tailwindcss'
 
-/** @type {import('tailwindcss').Config} */
 const config: Config = {
   darkMode: 'class',
   experimental: {
@@ -13,9 +13,6 @@ const config: Config = {
     extend: {
       screens: {
         xs: '475px'
-      },
-      spacing: {
-        18: '4.5rem'
       },
       colors: {
         gray: {
@@ -31,44 +28,51 @@ const config: Config = {
         DEFAULT: {
           css: {
             blockQuote: {
-              borderColor: theme('colors.gray.50')
+              borderColor: theme('colors.gray.50'),
+              marginTop: '0.75rem',
+              marginBottom: '0.75rem',
+              fontWeight: 'normal'
             },
             p: {
-              color: theme('colors.gray.950')
+              margin: 0,
+              padding: 0,
+              color: theme('colors.gray.900')
             },
             hr: {
               backgroundColor: theme('colors.gray.50'),
+
+              borderColor: theme('colors.gray.50'),
               height: '0.25rem',
-              marginTop: '1rem',
-              marginBottom: '1rem'
+              marginTop: '0.5rem',
+              marginBottom: '0.5rem'
             },
-            'h1, h2, h3': {
+            'h1, h2, h3, h4': {
+              color: theme('colors.gray.900'),
               letterSpacing: '-0.025em'
             },
             h1: {
-              lineHeight: 1,
-              marginBottom: `1.5rem`,
-              marginTop: '0.5rem',
+              marginTop: '0.75rem',
+              marginBottom: `0.25rem`,
               fontSize: '1.5rem',
               fontWeight: 'bold'
             },
             h2: {
               marginTop: '0.5rem',
-              marginBottom: `1rem`,
+              marginBottom: `0.25rem`,
               fontSize: '1.25rem',
-              fontWeight: 'semibold'
+              fontWeight: 'bold'
             },
             h3: {
-              marginTop: '0.5rem',
-              marginBotton: '1rem',
+              marginTop: '0.25rem',
+              marginBotton: '0.25rem',
               fontSize: '1.125rem',
-              fontWeight: 'medium'
+              fontWeight: 'semibold'
             },
             h4: {
-              marginTop: '0.5rem',
-              marginBottom: '1rem',
+              marginTop: '0.25rem',
+              marginBottom: '0.25rem',
               fontSize: '1rem',
-              fontWeight: 'normal'
+              fontWeight: 'medium'
             },
             'h2 small, h3 small, h4 small': {
               fontFamily: theme('fontFamily.mono').join(', '),
@@ -78,17 +82,25 @@ const config: Config = {
             'h2 code, h3 code': {
               font: 'inherit'
             },
+            li: {
+              color: theme('colors.gray.900'),
+              fontSize: '1rem',
+              fontWeight: 'medium',
+              padding: 0,
+              margin: 0,
+              lineHeight: 1.5
+            },
             ul: {
               listStyleType: 'none',
-              paddingLeft: '0.5rem'
+              paddingLeft: '0.5rem',
+              padding: 0,
+              margin: 0
             },
             'ul > li': {
               display: 'flex',
               alignItems: 'center',
-              fontWeight: 'medium',
               position: 'relative',
-              paddingLeft: '1.25rem',
-              color: theme('colors.gray.950')
+              paddingLeft: '1.25rem'
             },
             'ul > li::before': {
               content: '""',
@@ -102,28 +114,33 @@ const config: Config = {
             ol: {
               fontSize: '0.75rem',
               fontWeight: 'normal',
-              color: theme('colors.gray.800')
+              color: theme('colors.gray.700')
             },
-            'ol > li': {
-              fontSize: '1rem',
-              fontWeight: 'medium',
-              color: theme('colors.gray.950')
+            'ol > li > ol': {
+              margin: '0',
+              padding: '0'
             },
             a: {
-              fontWeight: 'semibold',
+              color: theme('colors.gray.900'),
+              fontWeight: 'medium',
+              textDecoration: 'underline',
+              padding: 0,
+              margin: 0
+            },
+            'li > a': {
               textDecoration: 'none'
             },
             'a code': {
               color: 'inherit',
               fontWeight: 'inherit'
             },
-            strong: {
-              color: theme('colors.gray.950'),
-              fontWeight: theme('fontWeight.medium')
-            },
             'a strong': {
               color: 'inherit',
               fontWeight: 'inherit'
+            },
+            strong: {
+              color: theme('colors.gray.900'),
+              fontWeight: 'black'
             },
             kbd: {
               backgroundColor: theme('colors.gray.50'),
@@ -153,43 +170,46 @@ const config: Config = {
         dark: {
           css: {
             blockQuote: {
-              borderColor: theme('colors.gray.800')
+              borderColor: theme('colors.gray.690')
             },
             p: {
               color: theme('colors.gray.50')
             },
             hr: {
-              backgroundColor: theme('colors.gray.800')
+              backgroundColor: theme('colors.gray.690'),
+              borderColor: theme('colors.gray.690')
             },
             h1: {
               color: theme('colors.gray.50')
             },
             h2: {
-              color: theme('colors.gray.200')
+              color: theme('colors.gray.100')
             },
             h3: {
               color: theme('colors.gray.100')
             },
             h4: {
-              color: theme('colors.gray.200')
+              color: theme('colors.gray.100')
+            },
+            'h1, h2, h3, h4': {
+              color: theme('colors.gray.50')
             },
             'h2 small, h3 small, h4 small': {
-              color: theme('colors.gray.200')
+              color: theme('colors.gray.100')
             },
             'ul > li': {
               color: theme('colors.gray.50')
             },
             'ul > li::before': {
-              backgroundColor: theme('colors.gray.690')
+              backgroundColor: theme('colors.gray.500')
             },
             ol: {
-              fontSize: '0.75rem',
-              fontWeight: 'normal',
-              color: theme('colors.gray.200')
+              color: theme('colors.gray.100')
             },
             'ol > li': {
-              fontSize: '1rem',
-              fontWeight: 'medium',
+              color: theme('colors.gray.50')
+            },
+            a: {
               color: theme('colors.gray.50')
             },
             strong: {
@@ -198,20 +218,20 @@ const config: Config = {
             kbd: {
               backgroundColor: theme('colors.gray.800'),
               borderColor: theme('colors.gray.690'),
-              color: theme('colors.gray.200')
+              color: theme('colors.gray.100')
             },
             code: {
               borderColor: theme('colors.gray.690'),
-              color: theme('colors.gray.100'),
-              backgroundColor: theme('colors.gray.800')
+              color: theme('colors.gray.50'),
+              backgroundColor: theme('colors.gray.100')
             }
           }
         }
       })
     },
     fontFamily: {
-      main: ['var(--font-main)'],
-      mono: ['var(--font-mono)']
+      main: ['var(--font-main)', ...defaultTheme.fontFamily.sans],
+      mono: defaultTheme.fontFamily.mono
     }
   },
   plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar')]
