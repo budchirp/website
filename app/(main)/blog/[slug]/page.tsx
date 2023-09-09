@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { PageHeader } from '@/components/PageHeader'
-import { components } from '@/components/MDX'
+import { PageHeader } from '@/components/page-header'
+import { components } from '@/components/mdx'
 import { genMetadata } from '@/lib/gen-metadata'
 import { Post } from '@/lib/post'
 import { Book, Calendar, User } from 'lucide-react'
@@ -40,9 +40,9 @@ const generateMetadata = async ({ params: { slug } }: DynamicPageProps): Promise
   })
 }
 
-const Page: React.FC<DynamicPageProps> = async ({
-  params: { slug }
-}: DynamicPageProps): Promise<JSX.Element> => {
+const Page: React.FC<DynamicPageProps> = async (
+  { params: { slug } }: DynamicPageProps
+): Promise<JSX.Element> => {
   const post: BlogPost | null | undefined = await new Post().getBySlug(slug)
 
   if (!post) {

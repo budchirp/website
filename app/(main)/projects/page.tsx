@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { Button } from '@/components/Button'
-import { Box } from '@/components/Box'
+import { Button } from '@/components/button'
+import { Box } from '@/components/box'
 import { genMetadata } from '@/lib/gen-metadata'
 import data from '@/data'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 
 const metadata: Metadata = genMetadata({ title: 'Projects' })
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Button } from '@/components/Button'
-import { Input } from '@/components/Input'
-import { Box } from '@/components/Box'
+import { Button } from '@/components/button'
+import { Input } from '@/components/input'
+import { Box } from '@/components/box'
 import { genMetadata } from '@/lib/gen-metadata'
 import { Post } from '@/lib/post'
 import { cn } from '@/lib/cn'
@@ -17,9 +17,9 @@ import type { Metadata } from 'next'
 
 const metadata: Metadata = genMetadata({ title: 'Blog' })
 
-const Page: React.FC<DynamicPageProps> = async ({
-  searchParams
-}: DynamicPageProps): Promise<JSX.Element> => {
+const Page: React.FC<DynamicPageProps> = async (
+  { searchParams }: DynamicPageProps
+): Promise<JSX.Element> => {
   const post: Post = new Post()
   const allPosts: BlogPost[] = await post.getAll()
 

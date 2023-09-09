@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import { VerticalPage } from '@/components/VerticalPage'
-import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
+import { VerticalPage } from '@/components/vertical-page'
+import { Container } from '@/components/container'
+import { Button } from '@/components/button'
 import { genMetadata } from '@/lib/gen-metadata'
 
 import type { ErrorProps } from '@/types/error'

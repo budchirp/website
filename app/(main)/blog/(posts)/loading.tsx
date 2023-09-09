@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Box } from '@/components/Box'
-import { Button } from '@/components/Button'
+import { Box } from '@/components/box'
+import { Button } from '@/components/button'
 import { genMetadata } from '@/lib/gen-metadata'
 
 import type { Metadata } from 'next'

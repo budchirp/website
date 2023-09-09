@@ -2,11 +2,11 @@
 
 import React, { Fragment, useEffect, useState } from 'react'
 
-import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
-import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
-import { Logo } from '@/components/Logo'
-import { Box } from '@/components/Box'
+import { ThemeSwitcher } from '@/components/ui/theme-switcher'
+import { Container } from '@/components/container'
+import { Button } from '@/components/button'
+import { Logo } from '@/components/logo'
+import { Box } from '@/components/box'
 import { type LinkProps, links } from '@/lib/links'
 import { cn } from '@/lib/cn'
 import { Dialog, Transition } from '@headlessui/react'
@@ -20,11 +20,9 @@ type HeaderLinkProps = {
   url: string
 }
 
-const HeaderLink: React.FC<HeaderLinkProps> = ({
-  pathname,
-  label,
-  url
-}: HeaderLinkProps): React.ReactNode => {
+const HeaderLink: React.FC<HeaderLinkProps> = (
+  { pathname, label, url }: HeaderLinkProps
+): React.ReactNode => {
   return (
     <Link
       className={cn(

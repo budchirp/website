@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container } from '@/components/Container'
+import { Container } from '@/components/container'
 
 import type { LayoutProps } from '@/types/layout'
 

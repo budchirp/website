@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ThemeProvider } from '@/providers/Theme'
-import { Header } from '@/components/ui/Header'
-import { Footer } from '@/components/ui/Footer'
+import { ThemeProvider } from '@/providers/theme-provider'
+import { Header } from '@/components/ui/header'
+import { Footer } from '@/components/ui/footer'
 import data from '@/data'
 import { Lexend } from 'next/font/google'
 

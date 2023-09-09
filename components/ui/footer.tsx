@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
-import { Logo } from '@/components/Logo'
+import { Container } from '@/components/container'
+import { Button } from '@/components/button'
+import { Logo } from '@/components/logo'
 import { Github } from 'lucide-react'
 import data from '@/data'
 import Link from 'next/link'

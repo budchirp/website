@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Container } from '@/components/Container'
-import { PageHeader } from '@/components/PageHeader'
+import { Container } from '@/components/container'
+import { PageHeader } from '@/components/page-header'
 
 import type { LayoutProps } from '@/types/layout'
 

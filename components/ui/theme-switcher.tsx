@@ -2,14 +2,14 @@
 
 import React, { Fragment, useEffect, useState } from 'react'
 
-import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
+import { Container } from '@/components/container'
+import { Button } from '@/components/button'
 import { cn } from '@/lib/cn'
 import { Listbox, Transition } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 
 import { Moon, Sun, Laptop, type LucideIcon } from 'lucide-react'
-import { Box } from '../Box'
+import { Box } from '../box'
 
 type Theme = 'dark' | 'light' | 'system'
 

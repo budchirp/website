@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { GoBack } from '@/components/utils/go-back'
-import { VerticalPage } from '@/components/VerticalPage'
+import { VerticalPage } from '@/components/vertical-page'
 import { genMetadata } from '@/lib/gen-metadata'
 
 import type { ErrorProps } from '@/types/error'
