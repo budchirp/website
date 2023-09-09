@@ -7,10 +7,16 @@ type VerticalPageProps = {
   items: React.ReactNode[]
 } & ComponentProps<'div'>
 
-const VerticalPage: React.ForwardRefExoticComponent<VerticalPageProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef(
+const VerticalPage: React.ForwardRefExoticComponent<
+  VerticalPageProps & React.RefAttributes<HTMLDivElement>
+> = React.forwardRef(
   ({ className, children, title, items, ...props }: VerticalPageProps, ref): React.ReactNode => {
     return (
-      <div {...props} ref={ref} className={cn('h-screen_ flex flex-col justify-center gap-4', className)}>
+      <div
+        {...props}
+        ref={ref}
+        className={cn('h-screen_ flex flex-col justify-center gap-4', className)}
+      >
         <h2 className="text-accent-primary text-5xl font-bold">{title}</h2>
 
         <div className="grid gap-1">

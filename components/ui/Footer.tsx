@@ -14,7 +14,12 @@ const Footer: React.FC = (): React.ReactNode => {
         <Container className="flex h-full items-center justify-between gap-2">
           <Logo />
 
-          <Link aria-label="Github" href={'https://github.com/' + data.githubUsername} rel="noreferrer" target="_blank">
+          <Link
+            aria-label="Github"
+            href={'https://github.com/' + data.githubUsername}
+            rel="noreferrer"
+            target="_blank"
+          >
             <Button aria-label="Github" variant="round" color="secondary">
               <Github />
             </Button>

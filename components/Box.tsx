@@ -22,15 +22,16 @@ const boxVariants = cva(['rounded-3xl'], {
 
 type BoxProps = {} & ComponentProps<'div'> & VariantProps<typeof boxVariants>
 
-const Box: React.ForwardRefExoticComponent<BoxProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<HTMLDivElement, BoxProps>(
-  ({ children, className, padding, variant, ...props }: BoxProps, ref): React.ReactNode => {
-    return (
-      <div {...props} ref={ref} className={cn(boxVariants({ className, padding, variant }))}>
-        {children}
-      </div>
-    )
-  }
-)
+const Box: React.ForwardRefExoticComponent<BoxProps & React.RefAttributes<HTMLDivElement>> =
+  React.forwardRef<HTMLDivElement, BoxProps>(
+    ({ children, className, padding, variant, ...props }: BoxProps, ref): React.ReactNode => {
+      return (
+        <div {...props} ref={ref} className={cn(boxVariants({ className, padding, variant }))}>
+          {children}
+        </div>
+      )
+    }
+  )
 Box.displayName = 'Box'
 
 export { Box, type BoxProps }

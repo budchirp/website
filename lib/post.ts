@@ -18,7 +18,9 @@ class Post {
         .map(async (file: string) => {
           const fileContent: string = await fs.readFile(Post.path + '/' + file, 'utf-8')
 
-          const { data: metaData, content }: { data: RawPost; content: PostBody } = matter(fileContent) as any
+          const { data: metaData, content }: { data: RawPost; content: PostBody } = matter(
+            fileContent
+          ) as any
 
           let formattedDate: string
 
@@ -42,10 +44,16 @@ class Post {
         })
     )
 
-    return posts.sort((a: BlogPost, b: BlogPost): number => a.date.getTime() - b.date.getTime()) || []
+    return (
+      posts.sort((a: BlogPost, b: BlogPost): number => a.date.getTime() - b.date.getTime()) || []
+    )
   }
 
-  async paginate(posts: BlogPost[], page: number = 0, limit: number = 10): Promise<{ posts: BlogPost[] | []; page: number; totalPages: number }> {
+  async paginate(
+    posts: BlogPost[],
+    page: number = 0,
+    limit: number = 10
+  ): Promise<{ posts: BlogPost[] | []; page: number; totalPages: number }> {
     const totalPages: number = Math.ceil(posts.length / limit) - 1 || 0
 
     if (typeof page !== 'number' || page > totalPages || page < 0) {

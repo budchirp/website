@@ -17,7 +17,9 @@ import type { Metadata } from 'next'
 
 const metadata: Metadata = genMetadata({ title: 'Blog' })
 
-const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPageProps): Promise<JSX.Element> => {
+const Page: React.FC<DynamicPageProps> = async ({
+  searchParams
+}: DynamicPageProps): Promise<JSX.Element> => {
   const post: Post = new Post()
   const allPosts: BlogPost[] = await post.getAll()
 
@@ -26,7 +28,10 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
   const searchText: string | null | undefined = decodeURIComponent(searchParams.search || '')
 
   if (searchText) {
-    const miniSearch = new MiniSearch({ fields: ['title', 'description', 'tags'], storeFields: Object.keys(allPosts[0]) })
+    const miniSearch = new MiniSearch({
+      fields: ['title', 'description', 'tags'],
+      storeFields: Object.keys(allPosts[0])
+    })
     miniSearch.addAll(allPosts)
 
     posts = miniSearch.search(searchText) as any[] as BlogPost[]
@@ -38,7 +43,10 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
     posts: paginatedPosts,
     page,
     totalPages
-  }: { posts: BlogPost[]; page: number; totalPages: number } = await new Post().paginate(posts, Number(searchParams?.page || 0) || 0)
+  }: { posts: BlogPost[]; page: number; totalPages: number } = await new Post().paginate(
+    posts,
+    Number(searchParams?.page || 0) || 0
+  )
   posts = paginatedPosts
 
   if (!posts || posts.length < 1) {
@@ -59,7 +67,14 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
   return (
     <div className="grid gap-4">
       <form className="grid gap-2" action={search}>
-        <Input defaultValue={searchText || ''} id="search" type="text" name="search" icon={<Search />} placeholder="Search posts..." />
+        <Input
+          defaultValue={searchText || ''}
+          id="search"
+          type="text"
+          name="search"
+          icon={<Search />}
+          placeholder="Search posts..."
+        />
         <input type="submit" hidden />
       </form>
 
@@ -70,7 +85,11 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
               <Box className="relative mb-4 h-min overflow-hidden last:mb-0" padding="none">
                 <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
                   <Link aria-label="Go to the blog post" href={'/blog/' + post.slug}>
-                    <img className="w-full object-cover transition duration-300 ease-out hover:scale-125" alt={post.title} src={post.imageUrl} />
+                    <img
+                      className="w-full object-cover transition duration-300 ease-out hover:scale-125"
+                      alt={post.title}
+                      src={post.imageUrl}
+                    />
                   </Link>
                 </div>
 
@@ -82,7 +101,9 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
                     </div>
 
                     <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                      <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">{post.title}</h1>
+                      <h1 className="hover:text-secondary break-all text-xl font-bold transition duration-300">
+                        {post.title}
+                      </h1>
                     </Link>
 
                     <p className="text-secondary">{post.description}</p>
@@ -100,10 +121,15 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
 
       <div className="flex h-min w-full items-center justify-between gap-1">
         <Link
-          className={cn('text-lg font-bold transition duration-300', nextDisabled ? 'text-tertiary' : 'text-primary hover:text-secondary')}
+          className={cn(
+            'text-lg font-bold transition duration-300',
+            nextDisabled ? 'text-tertiary' : 'text-primary hover:text-secondary'
+          )}
           aria-disabled={prevDisabled}
           aria-label="Previous page"
-          href={`/blog?${searchText ? `search=${searchText}&` : ''}page=${!prevDisabled ? page - 1 : page}`}
+          href={`/blog?${searchText ? `search=${searchText}&` : ''}page=${
+            !prevDisabled ? page - 1 : page
+          }`}
         >
           Prev
         </Link>
@@ -113,10 +139,15 @@ const Page: React.FC<DynamicPageProps> = async ({ searchParams }: DynamicPagePro
         </span>
 
         <Link
-          className={cn('text-lg font-bold transition duration-300', nextDisabled ? 'text-tertiary' : 'text-primary hover:text-secondary')}
+          className={cn(
+            'text-lg font-bold transition duration-300',
+            nextDisabled ? 'text-tertiary' : 'text-primary hover:text-secondary'
+          )}
           aria-disabled={nextDisabled}
           aria-label="Next page"
-          href={`/blog?${searchText ? `search=${searchText}&` : ''}page=${!nextDisabled ? page + 1 : page}`}
+          href={`/blog?${searchText ? `search=${searchText}&` : ''}page=${
+            !nextDisabled ? page + 1 : page
+          }`}
         >
           Next
         </Link>

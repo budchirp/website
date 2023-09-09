@@ -20,7 +20,11 @@ type HeaderLinkProps = {
   url: string
 }
 
-const HeaderLink: React.FC<HeaderLinkProps> = ({ pathname, label, url }: HeaderLinkProps): React.ReactNode => {
+const HeaderLink: React.FC<HeaderLinkProps> = ({
+  pathname,
+  label,
+  url
+}: HeaderLinkProps): React.ReactNode => {
   return (
     <Link
       className={cn(
@@ -108,7 +112,11 @@ const Header: React.FC = () => {
           >
             <Dialog.Panel className="fixed inset-x-0 top-20 z-[100] mx-auto flex h-min w-screen origin-[90%_0%] justify-center md:hidden">
               <Container className="relative flex h-min items-center justify-center">
-                <Box variant="primary" padding="none" className="top-0 w-full overflow-hidden sm:max-w-screen-xs">
+                <Box
+                  variant="primary"
+                  padding="none"
+                  className="top-0 w-full overflow-hidden sm:max-w-screen-xs"
+                >
                   <div className="border-primary flex h-16 items-center border-b px-5">
                     <Dialog.Title as="h2" className="text-2xl font-bold leading-none">
                       Links
@@ -118,7 +126,12 @@ const Header: React.FC = () => {
                   <div className="grid gap-1 px-5 py-3">
                     {links.map(
                       (link: LinkProps, index: number): React.ReactNode => (
-                        <HeaderLink pathname={pathname} label={link.label} url={link.url} key={index} />
+                        <HeaderLink
+                          pathname={pathname}
+                          label={link.label}
+                          url={link.url}
+                          key={index}
+                        />
                       )
                     )}
                   </div>

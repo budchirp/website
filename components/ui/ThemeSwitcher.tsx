@@ -36,7 +36,12 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
   return (
     <Listbox value={theme} onChange={(value: Theme) => setTheme(value)}>
       <Listbox.Button as={Fragment}>
-        <Button disabled={!mounted} aria-label="Open theme switcher menu" variant="round" color="secondary">
+        <Button
+          disabled={!mounted}
+          aria-label="Open theme switcher menu"
+          variant="round"
+          color="secondary"
+        >
           {Icon ? <Icon /> : null}
         </Button>
       </Listbox.Button>
@@ -50,7 +55,11 @@ const ThemeSwitcher: React.FC = (): React.ReactNode => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-90"
       >
-        <Listbox.Options className={cn('fixed inset-x-0 top-20 z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]')}>
+        <Listbox.Options
+          className={cn(
+            'fixed inset-x-0 top-20 z-[100] flex w-screen origin-[75%_0%] justify-center md:origin-[90%_0%]'
+          )}
+        >
           <Container className="relative flex items-center justify-end">
             <Box variant="primary" padding="none" className="top-0 w-36 overflow-hidden">
               {(Object.keys(themes) as Theme[]).map((theme: Theme): React.ReactNode => {
