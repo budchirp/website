@@ -12,20 +12,22 @@ const Page: React.FC = (): React.ReactNode => {
   return (
     <div className="mt-16 grid gap-4">
       <div>
-        <p className="text-accent-primary text-3xl font-bold">{data.title}</p>
+        <p className="text-accent-primary text-3xl font-bold">{data.name}</p>
+
         <p className="text-lg">
           <span className="text-secondary line-through">Almost</span> full-stack developer
         </p>
       </div>
 
       <div className="grid gap-1">
-        <p className="text-secondary text-xl font-medium">Technologies</p>
+        <p className="text-xl font-bold">Technologies</p>
 
         <div className="grid gap-2">
           {Object.keys(data.skills).map(
             (key: string, index: number): React.ReactNode => (
               <div key={index} className="grid gap-2">
-                <span className="text-tertiary text-sm">{key}</span>
+                <span className="text-secondary text-md font-medium">{key}</span>
+
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                   {/* @ts-ignore */}
                   {data.skills[key].map((skill: any, index: number): React.ReactNode => {
@@ -34,7 +36,7 @@ const Page: React.FC = (): React.ReactNode => {
                         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-700 p-1 text-xl text-gray-50">
                           {skill.icon}
                         </span>
-                        <p className="text-primary break-all text-sm font-medium">{skill.name}</p>
+                        <p className="break-all text-sm font-medium">{skill.name}</p>
                       </Box>
                     )
                   })}
@@ -46,7 +48,7 @@ const Page: React.FC = (): React.ReactNode => {
       </div>
 
       <div data-nosnippet className="grid gap-1">
-        <p className="text-secondary text-xl font-medium">My programming journey</p>
+        <p className="text-xl font-bold">My programming journey</p>
 
         <div className="grid gap-2">
           {Object.keys(data.journey)

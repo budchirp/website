@@ -15,18 +15,30 @@ import {
   SiC,
   SiCplusplus,
   SiGo,
-  SiAstro
+  SiAstro,
+  SiReddit
 } from 'react-icons/si'
 import { FaCss3, FaLinux, FaReact, FaVuejs } from 'react-icons/fa'
 import { Hexagon, Instagram, Mail, Send, Terminal } from 'lucide-react'
 
 const data = {
-  name: 'budchirp',
-  title: 'budchirp',
+  name: 'Can Kolay',
+  username: 'budchirp',
   description: 'Hello, World!',
-  githubUsername: 'budchirp',
-  keywords: ['about budchirp', 'budchirp projects', 'who is budchirp', 'contact budchirp'],
-  siteUrl: (process.env.APP_URL ?? 'http://localhost:3000') as string,
+  projectSources: ['budchirp', 'OxygeNvim'],
+  keywords: [
+    'budchirp',
+    'who is budchirp',
+    'about budchirp',
+    'budchirp projects',
+    'contact budchirp',
+    'can kolay',
+    'who is can kolay',
+    'about can kolay',
+    'contact can kolay',
+    'can kolay projects'
+  ],
+  siteUrl: (process.env.APP_URL || 'http://localhost:3000') as string,
   skills: {
     Languages: [
       {
@@ -128,7 +140,7 @@ const data = {
     ]
   },
   journey: {
-    2023: ['Started learning Rust, C and Go', 'Started learning Svelte and Astro'],
+    2023: ['Started learning Rust, C, C++ and Go', 'Started learning Svelte and Astro'],
     2022: ['Learned Lua'],
     2021: ['Learned Typescript', 'Learned basic React and Vue', 'Learned Tailwindcss'],
     2020: ['Learned Javascript, PHP', 'Learned Python'],
@@ -150,6 +162,14 @@ const data = {
     Instagram: {
       link: 'https://instagram.com/budchirp',
       icon: <Instagram />
+    },
+    X: {
+      link: 'https://x.com/budchirp',
+      icon: '𝕏'
+    },
+    Reddit: {
+      link: 'https://reddit.com/u/budchirp',
+      icon: <SiReddit />
     }
   }
 }

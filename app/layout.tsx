@@ -14,9 +14,9 @@ import '@/styles/globals.css'
 const metadata: Metadata = {
   metadataBase: new URL(data.siteUrl),
   keywords: data.keywords,
-  creator: data.name,
-  publisher: data.name,
-  authors: [{ name: data.name, url: data.siteUrl }],
+  creator: data.username,
+  publisher: data.username,
+  authors: [{ name: data.username, url: data.siteUrl }],
   description: data.description,
   manifest: '/manifest.json',
   verification: {
@@ -28,7 +28,7 @@ const metadata: Metadata = {
   ],
   title: {
     default: 'About me',
-    template: `%s - ${data.title}`
+    template: `%s - ${data.username}`
   },
   viewport: {
     width: 'device-width',
@@ -49,18 +49,18 @@ const metadata: Metadata = {
     description: data.description,
     title: {
       default: 'About me',
-      template: `%s - ${data.title}`
+      template: `%s - ${data.username}`
     }
   },
   openGraph: {
-    siteName: `${data.title}'s website`,
+    siteName: `${data.username}'s website`,
     locale: 'en_US',
     type: 'website',
     description: data.description,
     url: data.siteUrl,
     title: {
       default: 'About me',
-      template: `%s - ${data.title}`
+      template: `%s - ${data.username}`
     }
   }
 }

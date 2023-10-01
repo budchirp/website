@@ -9,7 +9,7 @@ type LogoProps = {} & Omit<ComponentProps<'h1'>, 'children'>
 const Logo: React.ForwardRefExoticComponent<LogoProps & React.RefAttributes<HTMLHeadingElement>> =
   React.forwardRef<HTMLHeadingElement, LogoProps>(
     ({ className, ...props }, ref): React.ReactNode => {
-      const label = `${data.title} logo`
+      const label = `${data.username} logo`
 
       return (
         <Link href="/" aria-label={label}>
@@ -22,7 +22,7 @@ const Logo: React.ForwardRefExoticComponent<LogoProps & React.RefAttributes<HTML
               className
             )}
           >
-            {data.title}
+            {data.username}
           </h1>
         </Link>
       )

@@ -16,11 +16,11 @@
   }
 
   .border-primary {
-    @apply border-gray-100 dark:border-gray-690;
+    @apply border-gray-100/75 dark:border-gray-690;
   }
 
   .border-secondary {
-    @apply border-gray-200/75 dark:border-gray-690/75;
+    @apply border-gray-200/50 dark:border-gray-690/75;
   }
 
   .text-primary {
@@ -28,11 +28,11 @@
   }
 
   .text-secondary {
-    @apply text-gray-700 dark:text-gray-100;
+    @apply text-gray-800 dark:text-gray-100;
   }
 
   .text-tertiary {
-    @apply text-gray-600 dark:text-gray-300;
+    @apply text-gray-700 dark:text-gray-300;
   }
 
   .text-primary-reverse {
@@ -69,7 +69,7 @@
     columns: 1 auto;
     break-inside: avoid;
 
-    div {
+    > * {
       break-inside: avoid;
     }
 
@@ -80,6 +80,10 @@
     @screen xl {
       columns: 3 auto;
     }
+  }
+
+  .masonry-2 {
+    columns: 2 auto !important;
   }
 }
 

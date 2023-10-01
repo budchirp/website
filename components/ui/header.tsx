@@ -86,25 +86,25 @@ const Header: React.FC = () => {
         <Dialog onClose={() => setIsMobileMenuOpened(false)}>
           <Transition.Child
             as="div"
-            enter="transition-all ease-out duration-300"
+            enter="transition-all ease-out duration-500"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="transition-all ease-in duration-150"
+            leave="transition-all ease-in duration-200"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
             onClick={() => {
               setIsMobileMenuOpened(false)
             }}
             aria-hidden="true"
-            className="fixed inset-0 z-[75] h-screen w-screen bg-gray-100/50 bg-blend-overlay backdrop-blur dark:bg-black/25 md:hidden"
+            className="bg-primary fixed inset-0 z-[75] h-screen w-screen !bg-opacity-25 bg-blend-overlay backdrop-blur-sm md:hidden"
           />
 
           <Transition.Child
             as={Fragment}
-            enter="transition ease-out duration-150"
+            enter="transition ease-out duration-200"
             enterFrom="opacity-0 scale-90"
             enterTo="opacity-100 scale-100"
-            leave="transition ease-in duration-150"
+            leave="transition ease-in duration-200"
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >

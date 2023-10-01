@@ -66,7 +66,7 @@ const Page: React.FC<DynamicPageProps> = async (
 
   return (
     <div className="grid gap-4">
-      <form className="grid gap-2" action={search}>
+      <form action={search}>
         <Input
           defaultValue={searchText || ''}
           id="search"
@@ -83,10 +83,10 @@ const Page: React.FC<DynamicPageProps> = async (
           (post: BlogPost): React.ReactNode => (
             <article key={post.slug}>
               <Box className="relative mb-4 h-min overflow-hidden last:mb-0" padding="none">
-                <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b">
+                <div className="border-primary relative flex h-min max-h-48 w-full items-center justify-center overflow-hidden rounded-t-2xl border-b md:max-h-64">
                   <Link aria-label="Go to the blog post" href={'/blog/' + post.slug}>
                     <img
-                      className="w-full object-cover transition duration-300 ease-out hover:scale-125"
+                      className="w-full object-cover transition duration-500 ease-out hover:scale-125"
                       alt={post.title}
                       src={post.imageUrl}
                     />
