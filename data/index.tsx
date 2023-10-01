@@ -25,6 +25,7 @@ const data = {
   name: 'Can Kolay',
   username: 'budchirp',
   description: 'Hello, World!',
+  githubUsername: 'budchirp',
   projectSources: ['budchirp', 'OxygeNvim'],
   keywords: [
     'budchirp',
