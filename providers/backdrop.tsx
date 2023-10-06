@@ -9,9 +9,9 @@ type BackdropProviderProps = {
   children: React.ReactNode
 }
 
-const BackdropProvider: React.FC<BackdropProviderProps> = (
-  { children }: BackdropProviderProps
-): React.ReactNode => {
+const BackdropProvider: React.FC<BackdropProviderProps> = ({
+  children
+}: BackdropProviderProps): React.ReactNode => {
   const [backdrop, setBackdrop] = useState<Backdrop>(false)
 
   return (
@@ -19,11 +19,11 @@ const BackdropProvider: React.FC<BackdropProviderProps> = (
       <Transition
         show={backdrop}
         as="div"
-        enter="transition-all ease-out duration-500"
+        enter="transition-all ease-out lg:duration-300 duration-500"
         enterFrom="opacity-0 !bg-opacity-0 backdrop-blur-none"
-        enterTo="opacity-25 !bg-opacity-25 backdrop-blur-sm"
+        enterTo="opacity-25 !bg-opacity-25 backdrop-blur-sm lg:backdrop-blur"
         leave="transition ease-in duration-200"
-        leaveFrom="opacity-25 !bg-opacity-25 backdrop-blur-sm"
+        leaveFrom="opacity-25 !bg-opacity-25 backdrop-blur-sm lg:backdrop-blur"
         leaveTo="opacity-0 !bg-opacity-0 backdrop-blur-none"
         onClick={() => {
           setBackdrop(false)

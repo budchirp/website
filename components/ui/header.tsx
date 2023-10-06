@@ -21,9 +21,11 @@ type HeaderLinkProps = {
   url: string
 }
 
-const HeaderLink: React.FC<HeaderLinkProps> = (
-  { pathname, label, url }: HeaderLinkProps
-): React.ReactNode => {
+const HeaderLink: React.FC<HeaderLinkProps> = ({
+  pathname,
+  label,
+  url
+}: HeaderLinkProps): React.ReactNode => {
   return (
     <Link
       className={cn(
@@ -59,10 +61,10 @@ const Header: React.FC = () => {
           <>
             <header
               className={cn(
-                'bg-primary border-primary sticky top-0 z-[125] flex h-16 w-full items-center justify-center border-b backdrop-blur-sm transition-all delay-[50ms]',
+                'bg-primary border-primary sticky top-0 z-[125] flex h-16 w-full items-center justify-center border-b backdrop-blur-sm transition-all delay-[50ms] lg:backdrop-blur',
                 backdrop
                   ? '!bg-opacity-100 duration-200 ease-in'
-                  : '!bg-opacity-25 duration-500 ease-out'
+                  : '!bg-opacity-25 duration-500 ease-out lg:duration-300'
               )}
             >
               <Container className="flex h-full items-center justify-between gap-2">
