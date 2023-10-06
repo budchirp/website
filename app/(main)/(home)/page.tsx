@@ -28,7 +28,7 @@ const Page: React.FC = (): React.ReactNode => {
               <div key={index} className="grid gap-2">
                 <span className="text-secondary text-md font-medium">{key}</span>
 
-                <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
                   {/* @ts-ignore */}
                   {data.skills[key].map((skill: any, index: number): React.ReactNode => {
                     return (

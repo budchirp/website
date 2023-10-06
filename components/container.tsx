@@ -13,7 +13,7 @@ const Container: React.ForwardRefExoticComponent<
         {...props}
         ref={ref}
         className={cn(
-          'mx-auto w-11/12 px-2 md:max-w-screen-sm md:px-4 lg:max-w-screen-md lg:px-6',
+          'mx-auto w-11/12 px-2 md:max-w-screen-sm md:px-4 lg:max-w-screen-md lg:px-8',
           className
         )}
       >

@@ -14,6 +14,10 @@ const config: Config = {
       screens: {
         xs: '475px'
       },
+      spacing: {
+        16: '4.5rem',
+        20: '5.5rem'
+      },
       colors: {
         gray: {
           ...colors.gray,

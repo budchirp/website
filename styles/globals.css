@@ -16,11 +16,11 @@
   }
 
   .border-primary {
-    @apply border-gray-100/75 dark:border-gray-690;
+    @apply border-gray-100/50 dark:border-gray-690/90;
   }
 
   .border-secondary {
-    @apply border-gray-200/50 dark:border-gray-690/75;
+    @apply border-gray-200/50 dark:border-gray-690/90;
   }
 
   .text-primary {
@@ -56,11 +56,11 @@
   }
 
   .min-h-screen_ {
-    min-height: calc(100vh - 4rem);
+    min-height: calc(100lvh - theme('spacing.16'));
   }
 
   .h-screen_ {
-    height: calc(100vh - 4rem);
+    height: calc(100lvh - theme('spacing.16'));
   }
 
   .masonry {

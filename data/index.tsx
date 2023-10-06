@@ -99,16 +99,8 @@ const data = {
         icon: <FaReact />
       },
       {
-        name: 'Vue',
-        icon: <FaVuejs />
-      },
-      {
         name: 'Svelte',
         icon: <SiSvelte />
-      },
-      {
-        name: 'Astro',
-        icon: <SiAstro />
       },
       {
         name: 'CSS',
@@ -141,9 +133,9 @@ const data = {
     ]
   },
   journey: {
-    2023: ['Started learning Rust, C, C++ and Go', 'Started learning Svelte and Astro'],
+    2023: ['Started learning C, C++ and Go', 'Started learning Svelte and Astro'],
     2022: ['Learned Lua'],
-    2021: ['Learned Typescript', 'Learned basic React and Vue', 'Learned Tailwindcss'],
+    2021: ['Learned Typescript', 'Learned basic React', 'Learned TailwindCSS'],
     2020: ['Learned Javascript, PHP', 'Learned Python'],
     2019: ['Learned HTML, CSS']
   },

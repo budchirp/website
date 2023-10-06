@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { ThemeProvider } from '@/providers/theme-provider'
+import { BackdropProvider } from '@/providers/backdrop'
+import { ThemeProvider } from '@/providers/theme'
 import { Header } from '@/components/ui/header'
 import { Footer } from '@/components/ui/footer'
 import data from '@/data'
@@ -72,11 +73,13 @@ const RootLayout: React.FC<LayoutProps> = ({ children }: LayoutProps): React.Rea
     <html suppressHydrationWarning lang="en-US">
       <body className={lexend.variable}>
         <ThemeProvider>
-          <Header />
+          <BackdropProvider>
+            <Header />
 
-          <main className="min-h-screen_">{children}</main>
+            <main className="min-h-screen_">{children}</main>
 
-          <Footer />
+            <Footer />
+          </BackdropProvider>
         </ThemeProvider>
       </body>
     </html>
