@@ -15,10 +15,9 @@ import {
   SiC,
   SiCplusplus,
   SiGo,
-  SiAstro,
   SiReddit
 } from 'react-icons/si'
-import { FaCss3, FaLinux, FaReact, FaVuejs } from 'react-icons/fa'
+import { FaCss3, FaLinux, FaReact } from 'react-icons/fa'
 import { Hexagon, Instagram, Mail, Send, Terminal } from 'lucide-react'
 
 const data = {

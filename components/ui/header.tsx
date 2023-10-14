@@ -21,11 +21,9 @@ type HeaderLinkProps = {
   url: string
 }
 
-const HeaderLink: React.FC<HeaderLinkProps> = ({
-  pathname,
-  label,
-  url
-}: HeaderLinkProps): React.ReactNode => {
+const HeaderLink: React.FC<HeaderLinkProps> = (
+  { pathname, label, url }: HeaderLinkProps
+): React.ReactNode => {
   return (
     <Link
       className={cn(
@@ -50,6 +48,8 @@ const Header: React.FC = () => {
         // eslint-disable-next-line
         useEffect(() => {
           close()
+
+          window.scrollTo({ top: 0, behavior: 'smooth' })
         }, [pathname])
 
         // eslint-disable-next-line

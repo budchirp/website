@@ -25,7 +25,11 @@ const Page: React.FC = async (): Promise<JSX.Element> => {
 
       reposWithSources[source] = await response.json()
     })
-  )
+  ).then(() => {
+    data.projectSources.map((source: string) => {
+      reposWithSources[source] = reposWithSources[source]
+    })
+  })
 
   if (!reposWithSources || Object.keys(reposWithSources).length < 1) {
     notFound()

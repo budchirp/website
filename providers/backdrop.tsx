@@ -9,9 +9,9 @@ type BackdropProviderProps = {
   children: React.ReactNode
 }
 
-const BackdropProvider: React.FC<BackdropProviderProps> = ({
-  children
-}: BackdropProviderProps): React.ReactNode => {
+const BackdropProvider: React.FC<BackdropProviderProps> = (
+  { children }: BackdropProviderProps
+): React.ReactNode => {
   const [backdrop, setBackdrop] = useState<Backdrop>(false)
 
   return (
