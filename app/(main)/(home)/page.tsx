@@ -32,7 +32,7 @@ const Page: React.FC = (): React.ReactNode => {
           <div className='text-md'>{data.about}</div>
         </div>
 
-        <div className='grid gap-2'>
+        <div className='grid gap-1'>
           <p className='text-xl font-bold'>Technologies</p>
 
           <div className='grid gap-4'>
@@ -53,7 +53,7 @@ const Page: React.FC = (): React.ReactNode => {
         </div>
       </div>
 
-      <div className='grid gap-2'>
+      <div className='grid gap-1'>
         <p className='text-xl font-bold'>Stacks</p>
 
         <div className='grid gap-4'>
